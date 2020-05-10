@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import React from "react";
 import "./Header.css";
-import Logo from "../images/aspect.png";
+import Logo from "../../images/aspect.png";
+import Features from "../../pages/features";
 
 class Header extends React.Component {
   constructor(props) {
