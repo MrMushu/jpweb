@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import React from "react";
 import "./Header.css";
-import Logo from "../../images/aspect.png";
+import Logo from "../../images/red_jp_logo.png";
 import Features from "../../pages/features";
 
 class Header extends React.Component {
@@ -37,11 +37,12 @@ class Header extends React.Component {
               <img src={Logo}></img>
             </Link>
           </div>
-          <Link to="/features">Features</Link>
-          <Link to="/pricing">Pricing</Link>
-          <Link to="/help">Help</Link>
+          <Link to="/features">Menu</Link>
+          <Link to="/pricing">Catering</Link>
+          <Link to="/help">E-Club</Link>
+          <Link to="/help">Contact</Link>
           <Link to="/try">
-            <button>Try Free!</button>
+            <button>Locations</button>
           </Link>
         </div>
       </div>
