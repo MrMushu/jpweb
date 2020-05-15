@@ -55,15 +55,29 @@
 
 @media (max-width: 640px) {
   .Header {
-    padding: 15px 0;
+    padding: 0px 0px 20px;
+    box-shadow: 2px 2px 6px 1px grey;
   }
   .HeaderGroup {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
+    align-content: center;
+    justify-content: space-between;
+    padding: 0px 25px
   }
+  
   .Header a:nth-child(4) {
     display: none;
   }
   .HeaderGroup img {
-    width: 220px;
+    width: 150px;
   }
+
+  .Menu {
+    padding: 0px 10px
+  }
+
+  .Menu img{
+    width: 40px
+  }
+
 }

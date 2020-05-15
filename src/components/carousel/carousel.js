@@ -2,7 +2,7 @@ import React from "react";
 import "../carousel/Carousel.css";
 import grab from "../../images/Header.jpg";
 
-class Carousel extends React.Component {
+class Carousel extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
