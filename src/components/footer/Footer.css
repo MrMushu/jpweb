@@ -1,10 +1,8 @@
 .FooterContainer {
     position: absolute;
-
     background-color: rgb(233, 223, 202);
     height: 500px;
     width: 100%;
-    padding: 12px;
     z-index: 5000;
 }
 
@@ -15,7 +13,6 @@
 .About {
     padding: 12px;
     display: inline;
-  
 }
 
 .About a {
@@ -37,14 +34,15 @@
 }
 
 .Disclaimer {
-    display: flex;
+    grid-template-columns: repeat(4, auto);
 }
+
 .Disclaimer a {
     background-color: transparent;
     border: transparent;
     color: black;
-  
 }
+
 .Social {
     display: flex;
     justify-content: space-evenly;
@@ -55,20 +53,15 @@
 
 .Icon {
     display: flex;
-    background-color:rgb(68, 58, 58);
+    background-color: rgb(68, 58, 58);
     border-radius: 32px;
     height: 45px;
     width: 45px;
     align-items: center;
     justify-content: center
-
 }
-
 
 .Icon img {
-   
     height: 20px;
     width: 20px
-    
 }
-

@@ -1,6 +1,7 @@
 import React from "react";
 import "../carousel/Carousel.css";
 import grab from "../../images/Header.jpg";
+import hot from "../../images/hot_sauce.jpg";
 
 class Carousel extends React.PureComponent {
   constructor(props) {
@@ -26,8 +27,8 @@ class Carousel extends React.PureComponent {
 
   render() {
     return (
-      <div className="Container">
-        <img src={grab}></img>
+      <div className="CarouselContainer">
+        <img src={hot}></img>
       </div>
     );
   }

@@ -1,9 +1,9 @@
 import React from "react";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "../../src/pageStyles/home.css";
 
 import Carousel from "../components/carousel/carousel";
-import Footer from '../components/footer/footer'
+import Footer from "../components/footer/footer";
 
 import tablet from "../images/tablet.png";
 import clover from "../images/clover-logo.png";
@@ -11,12 +11,15 @@ import screen from "../icons/screen.png";
 import utensils from "../icons/utensils.png";
 import clock from "../icons/clock.png";
 import check from "../icons/check.png";
-import tacos from "../images/tacos.jpg";
-import burrito from "../images/burrito.jpg";
-import white from "../images/white.jpg";
+import tacos from "../images/tacos.png";
+import burrito from "../images/burrito.png";
+import white from "../images/quarter_white.png";
 import mini from "../images/mini.jpg";
+import brush from "../images/brush.png";
+import doctors from "../images/doctors.jpg";
+import accent from "../images/accent.png";
 
-import News from "../components/news/news"
+import News from "../components/news/news";
 
 const Home = () => (
   <div>
@@ -26,8 +29,15 @@ const Home = () => (
       </div>
 
       <div className="OurFood">
-        <h1>OUR FOOD</h1>
-       
+        <div className="OurFoodHeader">
+          <img
+            style={{ transform: [{ rotateX: "180deg" }] }}
+            src={accent}
+          ></img>
+          <h1>OUR FOOD</h1>
+          <img src={accent}></img>
+        </div>
+
         <div className="OurFoodCategories">
           <div className="DescriptionSection">
             <img src={burrito}></img>
@@ -42,43 +52,33 @@ const Home = () => (
             <h2>SIDES</h2>
           </div>
         </div>
-        <button  href="/menu">VIEW MENU</button>
+
+        <Link to="/menu">VIEW MENU</Link>
       </div>
       <div className="Eclub">
         <h1>JOIN THE ROAST</h1>
         <div className="EclubForm">
           <input type="text" name="email" value="email *" />
-          <button>Sign Up</button>
+          <Link to="/eclub">SIGN UP</Link>
+          <img src={brush}></img>
         </div>
       </div>
 
       <div className="WhatsHappening">
         <h1>WHAT'S HAPPENING</h1>
         <div className="WhatsHappeningNews">
-          <News/>
+          <News pic={doctors} />
         </div>
       </div>
-
-      
-
-   
 
       <div className="Location">
         <h1>FIND A LOCATION</h1>
         <div className="EclubForm">
-        <input type="text" name="email" value="Zip Code *" />
-        <button>FIND STORE</button>
+          <input type="text" name="email" value="Zip Code *" />
+          <Link to="/locations">FIND STORE</Link>
         </div>
       </div>
-
-      <div className="Description">
-        <h1>CATERING</h1>
-        <div className="DescriptionGroup">
-          <div className="DescriptionSection"></div>
-        </div>
-      </div>
-
-      <Footer/>
+      <Footer />
     </div>
   </div>
 );
