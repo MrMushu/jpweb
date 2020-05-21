@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'HandCraftedARegular';
+  src: url('HandCraftedARegular.eot');
+  src: url('HandCraftedARegular.eot?#iefix') format('embedded-opentype'),
+       url('HandCraftedARegular.svg#HandCraftedARegular') format('svg'),
+       url('HandCraftedARegular.ttf') format('truetype'),
+       url('HandCraftedARegular.woff') format('woff'),
+       url('HandCraftedARegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

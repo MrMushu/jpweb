@@ -42,5 +42,10 @@
   "main": "index.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "rnpm": {
+    "assets": [
+      "./src/fonts/"
+    ]
+  }
 }

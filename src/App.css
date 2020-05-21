@@ -9,9 +9,13 @@
 
 @font-face {
   font-family: "Hand Crafted";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./fonts/HandCrafted.otf") format("otf"); /* IE9 Compat Modes */
+
+  src: local("Hand Crafted"), url("./fonts/HandCrafted.otf") format("otf"),
+    url("./fonts/HandCrafted.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./fonts/HandCrafted.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("./fonts/HandCrafted.woff") format("woff"),
+    /* Safari, Android, iOS */ url("./fonts/HandCrafted.svg#OpenSans")
+      format("svg"); /* Legacy iOS */ /* IE9 Compat Modes */
 }
 
 @media (prefers-reduced-motion: no-preference) {
