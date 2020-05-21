@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+@font-face {
+  font-family: "Hand Crafted";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/HandCrafted.otf") format("otf"); /* IE9 Compat Modes */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
