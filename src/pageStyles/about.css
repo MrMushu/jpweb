@@ -401,7 +401,7 @@
 
   .RotisserieText h2 {
     font-family: "Berlin Sans FB";
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     letter-spacing: 1px;
@@ -462,28 +462,28 @@
   .OurBeginnings {
     display: flex;
     height: 500px;
-    padding: 30px;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
   }
 
   .OurBeginnings h2 {
     font-family: "Berlin Sans FB";
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     letter-spacing: 1px;
     color: #6c2c2c;
   }
   .OurBeginnings img {
-    height: 50px;
+    height: 30px;
     opacity: 0.8;
   }
 
   .OurBeginnings p {
     max-width: 800px;
-    line-height: 40px;
-    font-size: 22px;
+    line-height: 35px;
+    font-size: 18px;
   }
 
   .OurBeginnings a {
@@ -493,6 +493,7 @@
     background-color: #d12728;
     color: white;
     height: 50px;
+    font-size: 16px;
     width: 40%;
     border-radius: 4px;
     font-weight: bold;
@@ -526,18 +527,19 @@
   .FeedingFamiliesText p {
     max-width: 800px;
     text-align: left;
-    line-height: 40px;
-    font-size: 22px;
+    line-height: 35px;
+    font-size: 18px;
   }
 
   .FeedingFamilies a {
     display: flex;
+    font-size: 16px;
     justify-content: center;
     align-items: center;
     background-color: #d12728;
     color: white;
     height: 50px;
-    width: 200px;
+    width: 40%;
     border-radius: 4px;
     font-weight: bold;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
