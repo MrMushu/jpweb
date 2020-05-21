@@ -5,6 +5,7 @@ import "../pageStyles/catering.css";
 import plate from "../images/plate.jpg";
 import staff from "../images/125.jpg";
 import cateringHero from "../images/catering_hero.jpg";
+import brush from "../images/grey-brush.png";
 
 class Catering extends React.Component {
   constructor(props) {
@@ -13,9 +14,40 @@ class Catering extends React.Component {
       package: 1,
     };
   }
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
+    this.setState({
+      [name]: value,
+    });
+  };
   togglePackage = (i) => {
     this.setState({ package: i });
+  };
+
+  renderPackage = () => {
+    if (this.state.package === 1) {
+      return (
+        <div className="Package">
+          <div className="PackageDescription">
+            <h4>Starting $12 / Person</h4>
+            <p>
+              Our standard package comes with all the flavors you know and love
+              from Juan Pollo!
+            </p>
+            <p>
+              Chicken - Rice - Beans <br />
+              Potato Salad - Green Salad
+              <br />
+              Salsa - Tortillas
+            </p>
+          </div>
+          <img src={cateringHero}></img>
+        </div>
+      );
+    }
   };
 
   componentDidMount() {}
@@ -26,7 +58,12 @@ class Catering extends React.Component {
           <h2>FULL SERVICE CATERING</h2>
         </div>
         <div className="CateringHeader">
-          <h2>LET US SERVE AT YOUR GATHERING</h2>
+          <div className="LineHeader">
+            <div className="Line" />
+            <h2>LET US SERVE AT YOUR GATHERING</h2>
+            <div className="Line" />
+          </div>
+
           <p>
             Order Full-Service Catering at Juan Pollo! We will deliver and serve
             your party goers the family-style meals we are famous for! Whether
@@ -40,62 +77,101 @@ class Catering extends React.Component {
           <img src={plate}></img>
           <img src={staff}></img>
         </div>
+
         <div className="CateringPackagesHeader">
-          <div>
+          <div className="Order">
             <h2>FULL-SERVICE PACKAGES</h2>
             <p>Minimum 300 people</p>
           </div>
-          <div>
+          <div className="Order">
             <Link>ORDER NOW</Link>
+          </div>
+          <div className="Brush">
+            <img src={brush} />
           </div>
         </div>
         <div className="CateringPackages">
           <div className="PackageHeader">
-            <button>STANDARD</button>
-            <button>INDIVIDUALLY BOXED</button>
-            <button>CUSTOMIZE</button>
-          </div>
-          <div className="Package">
-            <div className="PackageDescription">
-              <h4>Starting $12 / Person</h4>
-              <p>
-                Our standard package comes with all the flavors you know and
-                love from Juan Pollo!
-              </p>
-              <p>
-                Chicken - Rice - Beans <br />
-                Potato Salad - Green Salad
-                <br />
-                Salsa - Tortillas
-              </p>
+            <div
+              className={
+                this.state.package === 1
+                  ? "PackageCategory"
+                  : "PackageCategoryOff"
+              }
+            >
+              <button onClick={() => this.togglePackage(1)}>STANDARD</button>
             </div>
-            <img src={cateringHero}></img>
+            <div
+              className={
+                this.state.package === 2
+                  ? "PackageCategory"
+                  : "PackageCategoryOff"
+              }
+            >
+              <button onClick={() => this.togglePackage(2)}>
+                INDIVIDUALLY BOXED
+              </button>
+            </div>
+            <div
+              className={
+                this.state.package === 3
+                  ? "PackageCategory"
+                  : "PackageCategoryOff"
+              }
+            >
+              <button onClick={() => this.togglePackage(3)}>CUSTOMIZE</button>
+            </div>
           </div>
+
+          {this.renderPackage()}
         </div>
         <div className="HowItWorks">
-          <h2>HOW IT WORKS</h2>
+          <div className="LineHeader">
+            <div className="Line" />
+            <h2>HOW IT WORKS</h2>
+            <div className="Line" />
+          </div>
+
           <div className="HowSteps">
             <div className="How">
-              <h5>1</h5>
-              <h4>WE LEARN YOUR PREFERENCES</h4>
-              <p>
-                Give us a call with details about your event. We'll work with
-                you to customize the perfect meal option for you guests.
-              </p>
+              <div className="HowNumber">
+                <h5>1</h5>
+              </div>
+              <div className="StepHeader">
+                <h4>WE LEARN YOUR PREFERENCES</h4>
+              </div>
+              <div className="StepDescription">
+                <p>
+                  Give us a call with details about your event. We'll work with
+                  you to customize the perfect meal option for you guests.
+                </p>
+              </div>
             </div>
             <div className="How">
-              <h5>2</h5>
-              <h4>WE COOK AND SERVE</h4>
-              <p>
-                Our team will deliver and serve your delicious meals. We'll
-                provide all necessary trays and utensils for everyone at your
-                gathering.
-              </p>
+              <div className="HowNumber">
+                <h5>2</h5>
+              </div>
+              <div className="StepHeader">
+                <h4>WE COOK AND SERVE</h4>
+              </div>
+              <div className="StepDescription">
+                <p>
+                  Our team will deliver and serve your delicious meals. We'll
+                  provide all necessary trays and utensils for everyone at your
+                  gathering.
+                </p>
+              </div>
             </div>
             <div className="How">
-              <h5>3</h5>
-              <h4>YOUR PARTY LEAVES HAPPY!</h4>
-              <p>Sit back and enjoy the party!</p>
+              <div className="HowNumber">
+                <h5>3</h5>
+              </div>
+              <div className="StepHeader">
+                <h4>YOUR PARTY LEAVES HAPPY!</h4>
+              </div>
+              <div className="StepDescription">
+                <p>Sit back and enjoy the party!</p>
+              </div>
             </div>
           </div>
         </div>
@@ -106,30 +182,77 @@ class Catering extends React.Component {
             out to you about moving forward! You can also give us a call
             directly to our corporate office at (999) 999-9999
           </p>
+
           <div className="RequestRow">
-            <input type="text" name="email" value="Name / Organization *" />
-            <input type="text" name="email" value="Phone Number *" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name / Organization *"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number *"
+              value={this.state.phone}
+              onChange={this.handleChange}
+            />
           </div>
           <div className="RequestRow">
-            <input type="text" name="email" value="Email *" />
-            <input type="text" name="email" value="Catering Date *" />
-          </div>
-          <div className="RequestRow">
-            <input type="text" name="email" value="Event Location *" />
-            <input type="text" name="email" value="Event Type" />
-          </div>
-          <div className="RequestRow">
-            <input type="text" name="email" value="Approximate # of Guests" />
             <input
               type="text"
               name="email"
-              value="Estimated Budget per Person"
+              placeholder="Email *"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="date"
+              placeholder="Catering Date *"
+              value={this.state.date}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="RequestRow">
+            <input
+              type="text"
+              name="location"
+              placeholder="Event Location *"
+              value={this.state.location}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="type"
+              placeholder="Event Type"
+              value={this.state.type}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="RequestRow">
+            <input
+              type="text"
+              name="guests"
+              placeholder="Approximaate # of Guests"
+              value={this.state.guests}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="budget"
+              placeholder="Estimated Budget Per Person"
+              value={this.state.budget}
+              onChange={this.handleChange}
             />
           </div>
           <input
             type="text"
-            name="email"
-            value="Additional Comments / Questions ..."
+            name="comments"
+            placeholder="Additional Comments / Questions..."
+            value={this.state.comments}
+            onChange={this.handleChange}
           />
 
           <Link>SUBMIT</Link>

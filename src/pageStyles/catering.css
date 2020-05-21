@@ -1,8 +1,11 @@
 .CateringContainer {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: center;
   color: rgb(63, 60, 60);
+  overflow: hidden;
 }
 
 .CateringContainer h2 {
@@ -19,7 +22,7 @@
 }
 .CateringContainer a {
   display: flex;
-
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   background-color: #d12728;
@@ -49,13 +52,23 @@
   color: white;
 }
 
+.LineHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Line {
+  height: 2px;
+  width: 25%;
+  background-color: rgb(97, 14, 14);
+}
 .CateringHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-
+  width: 90%;
   padding: 5% 0 5% 0;
 }
 .CateringHeader h2 {
@@ -80,17 +93,36 @@
   width: 50%;
 }
 .CateringPackagesHeader {
-  align-self: center;
+  width: 100%;
+  max-width: 1300px;
   display: flex;
   text-align: left;
   padding: 5%;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+}
+
+.Order {
+  padding: 0 5%;
+}
+.Brush {
+  position: absolute;
+  width: 100%;
+
+  overflow: hidden;
+  z-index: -1;
+}
+.Brush img {
+  overflow-x: hidden;
+  margin-left: 50%;
+  margin-top: 3%;
+  width: 90%;
+  opacity: 0.3;
 }
 .CateringPackages {
   background-color: #f8f6f7;
-
-  padding: 2% 0 2% 0;
+  padding: 0% 0 2% 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 .PackageHeader {
@@ -107,8 +139,24 @@
 .PackageHeaderOff button {
   background-color: white;
 }
+.PackageCategory {
+  background-color: #f8f6f7;
+  width: 33%;
+  padding: 2%;
+}
+
+.PackageCategoryOff {
+  background-color: white;
+  width: 33%;
+  padding: 2%;
+}
+.PackageCategoryOff button {
+  color: grey;
+}
+
 .Package {
   display: flex;
+  max-width: 1300px;
 }
 .Package img {
   object-fit: cover;
@@ -124,10 +172,14 @@
   text-align: center;
   width: 70%;
 }
-
+.HowItWorks {
+  padding: 5%;
+}
 .HowSteps {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  max-width: 1300px;
+  padding-top: 5%;
 }
 
 .How {
@@ -137,8 +189,36 @@
   width: 33%;
 }
 
+.HowNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 32px;
+  background-color: #d12728;
+  color: white;
+}
+.HowNumber h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
 .How p {
   width: 90%;
+}
+
+.StepHeader {
+  display: flex;
+  height: 40%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.StepDescription {
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .RequestForm {
@@ -146,7 +226,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.RequestForm form {
+  width: 90%;
+}
 .RequestForm p {
   width: 90%;
 }
