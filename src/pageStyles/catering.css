@@ -6,13 +6,16 @@
 }
 
 .CateringContainer h2 {
-  font-size: 28px;
+  font-size: 24px;
   color: rgb(63, 60, 60);
   font-family: "Hand Crafted";
 }
 
 .CateringContainer p {
   font-family: "Gunnar";
+  font-size: 16px;
+  width: 90%;
+  max-width: 800px;
 }
 .CateringContainer a {
   display: flex;
@@ -86,12 +89,44 @@
 }
 .CateringPackages {
   background-color: #f8f6f7;
-  height: 300px;
+
+  padding: 2% 0 2% 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
+.PackageHeader {
+  display: flex;
+  justify-content: space-evenly;
+}
+.PackageHeader button {
+  font-family: "Gunnar";
+  background-color: transparent;
+  border: 0;
+  padding: 2%;
+}
+
+.PackageHeaderOff button {
+  background-color: white;
+}
+.Package {
+  display: flex;
+}
+.Package img {
+  width: 50%;
+}
+.PackageDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.PackageDescription p {
+  text-align: center;
+  width: 70%;
+}
+
 .HowSteps {
   display: flex;
   justify-content: space-evenly;
-  padding: 0 3% 0 3%;
 }
 
 .How {
@@ -103,8 +138,39 @@
 
 .How p {
   width: 90%;
-  font-size: 22px;
 }
+
+.RequestForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RequestForm p {
+  width: 90%;
+}
+.RequestForm input {
+  padding: 1% 2%;
+  width: 82%;
+  height: 35px;
+  background-color: rgb(212, 207, 207);
+  border: 0;
+  margin: 2%;
+}
+.RequestRow {
+  width: 100%;
+}
+.RequestRow input {
+  width: 37%;
+  margin: 2%;
+}
+
+.RequestForm h6 {
+  width: 60%;
+  font-size: 12px;
+  color: rgb(136, 135, 135);
+}
+
 @media (max-width: 650px) {
   .CateringContainer h2 {
     font-size: 22px;
