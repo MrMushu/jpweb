@@ -41,6 +41,7 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
+
   background-color: rgb(75, 72, 72);
 }
 
@@ -302,7 +303,7 @@ a {
   justify-content: space-evenly;
   color: black;
   background-color: white;
-  height: 750px;
+  padding: 5% 0 5%;
   z-index: 2;
   width: 100%;
   background-color: rgb(253, 250, 250);
@@ -358,17 +359,19 @@ a {
   justify-content: center;
   align-items: center;
   max-width: 1600px;
+  padding: 5%;
 }
 
 .OurFoodHeader img {
-  width: 25%;
+  width: 20%;
+  opacity: 0.6;
   height: auto;
   padding: 0px 5px;
 }
 
 .OurFoodHeader h1 {
   font-family: "Hand Crafted";
-  font-size: 42;
+  font-size: 38;
   letter-spacing: 2px;
   font-weight: 400;
   color: #432727;
@@ -542,6 +545,7 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     height: 650px;
+    padding: 5%;
     background-color: rgb(254, 255, 250);
   }
   .WhatsHappening h1 {
@@ -561,12 +565,12 @@ a {
     flex-direction: column;
     justify-content: center;
     height: 325px;
+    padding: 5%;
     background: url(../images/map_dark.png);
   }
   .Location h1 {
-    letter-spacing: 9px;
-    padding-top: 25px;
-    font-size: 32px;
+    letter-spacing: 5px;
+    font-size: 24px;
   }
   .Location input {
     height: 50px;

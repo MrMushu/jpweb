@@ -8,18 +8,29 @@ import Home from "./home";
 import Features from "./features";
 import About from "./about";
 
-const IndexPage = () => (
-  <Router>
-    <div>
-      <Header />
-      <Switch>
-        <Route path="/features" component={Features} />
-        <Route path="/about-us" component={About} />
-        <Route path="/" component={Home} />
-      </Switch>
-      <Footer />
-    </div>
-  </Router>
-);
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  render() {
+    return (
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route path="/features" component={Features} />
+            <Route path="/about-us" component={About} />
+            <Route path="/" component={Home} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default IndexPage;
