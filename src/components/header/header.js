@@ -49,7 +49,7 @@ class Header extends React.Component {
       <div
         className={this.state.hasScrolled ? "Header HeaderScrolled" : "Header"}
       >
-        {this.state.width > 755 ? (
+        {this.state.width > 650 ? (
           <div className="HeaderGroup">
             <div>
               <Link to="/">
@@ -72,8 +72,8 @@ class Header extends React.Component {
                 <Link to="/">
                   <img src={Logo}></img>
                 </Link>
-                <p>{this.state.width}</p>
               </div>
+              <p>{this.state.width}</p>
               <div className="Menu">
                 <button onClick={this.toggleMenu}>
                   {this.state.menu ? (
