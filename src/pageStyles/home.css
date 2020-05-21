@@ -675,10 +675,10 @@ a {
   }
   .Eclub h1 {
     font-family: "Berlin Sans FB";
-    letter-spacing: 12px;
+    letter-spacing: 5px;
     font-weight: 600;
     color: white;
-    font-size: 28px;
+    font-size: 26px;
     z-index: 2;
   }
   .EclubForm {
@@ -726,7 +726,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 650px;
+    height: auto;
     background-color: rgb(254, 255, 250);
   }
 
@@ -740,7 +740,10 @@ a {
 
   .WhatsHappeningNews {
     display: inline-flex;
+    height: auto;
     justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
 }
 
