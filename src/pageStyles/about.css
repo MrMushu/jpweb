@@ -3,6 +3,7 @@
   height: 3500px;
   width: 100%;
   padding-top: 150px;
+  overflow: hidden;
 }
 
 .AboutHeader {
@@ -248,7 +249,7 @@
     background-color: #d12728;
     color: white;
     height: 50px;
-    width: 175px;
+    width: 25%;
     border-radius: 4px;
     font-weight: bold;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
@@ -316,7 +317,7 @@
     background-color: #d12728;
     color: white;
     height: 50px;
-    width: 200px;
+    width: 40%;
     border-radius: 4px;
     font-weight: bold;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
