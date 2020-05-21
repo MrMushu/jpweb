@@ -374,3 +374,179 @@
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
   }
 }
+@media (max-width: 480px) {
+  .RotisserieContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    justify-content: space-between;
+    height: 900px;
+    padding-bottom: 100px;
+  }
+
+  .RotisserieText {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    text-align: left;
+    color: #692c2b;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 35px;
+  }
+
+  .RotisserieText h2 {
+    font-family: "Berlin Sans FB";
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    letter-spacing: 1px;
+    color: #692c2b;
+    width: 100%;
+  }
+
+  .RotisserieText p {
+    color: #3a3535;
+
+    line-height: 30px;
+    font-size: 18px;
+  }
+
+  .RotisserieText a {
+    display: flex;
+    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: #d12728;
+    color: white;
+    height: 50px;
+    width: 40%;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
+  }
+
+  .RotisseriePhoto {
+    width: 100%;
+    max-width: 800px;
+    padding-top: 50px;
+    padding: 20px;
+  }
+
+  .RotisseriePhoto img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+  .BeginningsPhotos {
+    background: url(../images/grey-background.jpg);
+
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+
+  .BeginningsPhotos img {
+    padding-top: 20px;
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+
+  .OurBeginnings {
+    display: flex;
+    height: 500px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .OurBeginnings h2 {
+    font-family: "Berlin Sans FB";
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    letter-spacing: 1px;
+    color: #6c2c2c;
+  }
+  .OurBeginnings img {
+    height: 50px;
+    opacity: 0.8;
+  }
+
+  .OurBeginnings p {
+    max-width: 800px;
+    line-height: 40px;
+    font-size: 22px;
+  }
+
+  .OurBeginnings a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d12728;
+    color: white;
+    height: 50px;
+    width: 40%;
+    border-radius: 4px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
+  }
+  .FeedingFamilies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../images/grey-background.jpg);
+    height: 600px;
+    width: 100%;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+
+  .FeedingFamiliesText {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+  }
+
+  .FeedingFamiliesText h2 {
+    font-family: "Berlin Sans FB";
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #6c2c2c;
+    text-align: left;
+  }
+
+  .FeedingFamiliesText p {
+    max-width: 800px;
+    text-align: left;
+    line-height: 40px;
+    font-size: 22px;
+  }
+
+  .FeedingFamilies a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d12728;
+    color: white;
+    height: 50px;
+    width: 200px;
+    border-radius: 4px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
+  }
+
+  .FeedingFamilies img {
+    position: absolute;
+    top: 50%;
+
+    filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
+  }
+}
