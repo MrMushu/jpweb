@@ -176,7 +176,12 @@ class Catering extends React.Component {
           </div>
         </div>
         <div className="RequestForm">
-          <h2>REQUEST FORM</h2>
+          <div className="LineHeader">
+            <div className="Line" />
+            <h2>REQUEST FORM</h2>
+            <div className="Line" />
+          </div>
+
           <p>
             Fill in the form below to the best of your ability and we will reach
             out to you about moving forward! You can also give us a call
