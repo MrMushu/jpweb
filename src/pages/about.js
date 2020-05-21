@@ -64,7 +64,8 @@ const About = () => (
         </p>
         <Link>READ MORE ></Link>
       </div>
-
+    </div>
+    <div className="Meal">
       <img src={meal} />
     </div>
   </div>
