@@ -6,9 +6,6 @@
   overflow: hidden;
 }
 
-.AboutHeader {
-}
-
 .AboutHeader h2 {
   color: #692c2b;
   font-family: "Berlin Sans FB";
@@ -248,7 +245,8 @@
     background-color: #d12728;
     color: white;
     height: 50px;
-    width: 25%;
+    min-width: 180px;
+    width: 35%;
     border-radius: 4px;
     font-weight: bold;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
@@ -360,7 +358,8 @@
     background-color: #d12728;
     color: white;
     height: 50px;
-    width: 200px;
+    min-width: 200px;
+    width: 30%;
     border-radius: 4px;
     font-weight: bold;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
