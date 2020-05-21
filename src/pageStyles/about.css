@@ -58,6 +58,7 @@
 .RotisserieText p {
   font-size: 28px;
   line-height: 35px;
+  font-weight: 600;
 }
 
 .RotisserieText a {
@@ -124,11 +125,12 @@
 }
 
 .OurBeginnings p {
-  margin-top: -2%;
+  padding: 0 0 5%;
   max-width: 1000px;
   line-height: 40px;
   font-size: 28px;
   width: 90%;
+  font-weight: 600;
 }
 
 .OurBeginnings a {
@@ -177,6 +179,7 @@
   text-align: left;
   line-height: 40px;
   font-size: 28px;
+  font-weight: 600;
 }
 
 .FeedingFamilies a {
@@ -431,7 +434,7 @@
     color: #3a3535;
     text-align: center;
     line-height: 30px;
-    font-size: 18px;
+    font-size: 16px;
     padding: 5% 0 5%;
   }
 
@@ -499,7 +502,8 @@
   .OurBeginnings p {
     max-width: 800px;
     line-height: 35px;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0 0 5%;
   }
 
   .OurBeginnings a {
@@ -546,8 +550,7 @@
     max-width: 400px;
     text-align: left;
     line-height: 35px;
-
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .FeedingFamilies a {
