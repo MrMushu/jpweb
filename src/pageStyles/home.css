@@ -13,6 +13,10 @@ a {
   font-weight: 600;
 }
 
+p {
+  font-family: "Gunnar";
+}
+
 .Hero {
   padding-top: 130px;
   background-size: cover;
@@ -135,7 +139,7 @@ a {
 }
 
 .WhatsHappening h1 {
-  font-family: "Berlin Sans FB";
+  font-family: "Hand Crafted";
   letter-spacing: 9px;
   font-weight: 500;
   color: #432727;
@@ -190,7 +194,7 @@ a {
 }
 
 .DescriptionSection h2 {
-  font-family: "Berlin Sans FB";
+  font-family: "Hand Crafted";
   letter-spacing: 5px;
   color: #533f31;
   font-size: 32px;
@@ -237,7 +241,7 @@ a {
 
 .Eclub h1 {
   text-align: center;
-  font-family: "Berlin Sans FB";
+  font-family: "Hand Crafted";
   letter-spacing: 12px;
   font-weight: 600;
   color: white;
@@ -381,10 +385,11 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 325px;
+
   background: url(../images/map_dark.png);
 }
 .Location h1 {
+  font-family: "Hand Crafted";
   letter-spacing: 9px;
   padding-top: 25px;
   font-size: 32px;
@@ -466,7 +471,6 @@ a {
     background-color: transparent;
   }
   .DescriptionSection h2 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 5px;
     color: #533f31;
     font-size: 24px;
@@ -492,7 +496,6 @@ a {
     background: url(../images/wood_dark.png);
   }
   .Eclub h1 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 12px;
     font-weight: 600;
     color: white;
@@ -545,15 +548,14 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     height: 650px;
-    padding: 5%;
+    padding: 5% 5% 10%;
     background-color: rgb(254, 255, 250);
   }
   .WhatsHappening h1 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 9px;
     font-weight: 500;
     color: #432727;
-    padding-top: 30px;
+    padding: 5% 0 5%;
   }
   .WhatsHappeningNews {
     display: inline-flex;
@@ -564,13 +566,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 325px;
+
     padding: 5%;
     background: url(../images/map_dark.png);
   }
   .Location h1 {
     letter-spacing: 5px;
-    font-size: 24px;
+    font-size: 22px;
   }
   .Location input {
     height: 50px;
@@ -620,10 +622,9 @@ a {
   }
 
   .OurFood h1 {
-    font-family: "Hand Crafted";
     letter-spacing: 2px;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 24px;
     color: #432727;
   }
 
@@ -650,7 +651,6 @@ a {
     height: auto;
   }
   .DescriptionSection h2 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 5px;
     color: #533f31;
     font-size: 20px;
@@ -679,11 +679,10 @@ a {
     background: url(../images/wood_dark.png);
   }
   .Eclub h1 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 5px;
     font-weight: 600;
     color: white;
-    font-size: 26px;
+    font-size: 22px;
     z-index: 2;
   }
   .EclubForm {
@@ -691,7 +690,7 @@ a {
     align-items: center;
     justify-content: center;
     justify-items: center;
-    padding: 30px 0;
+
     display: flex;
   }
   .EclubForm input {
@@ -736,11 +735,10 @@ a {
   }
 
   .WhatsHappening h1 {
-    font-family: "Berlin Sans FB";
     letter-spacing: 3px;
-    font-weight: 600;
-    color: #432727;
-    font-size: 28px;
+    font-weight: 500;
+    color: #4b3131;
+    font-size: 22px;
   }
 
   .WhatsHappeningNews {

@@ -111,6 +111,7 @@
   display: flex;
 }
 .Package img {
+  object-fit: cover;
   width: 50%;
 }
 .PackageDescription {
