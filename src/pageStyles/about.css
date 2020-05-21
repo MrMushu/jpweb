@@ -7,7 +7,6 @@
 }
 
 .AboutHeader {
-  height: 800px;
 }
 
 .AboutHeader h2 {
@@ -196,9 +195,9 @@
 
 .FeedingFamilies img {
   position: absolute;
-  margin-top: 10%;
-  margin-left: 40%;
-  width: 40%;
+  margin-top: 15%;
+  margin-left: 26%;
+
   max-width: 700px;
   filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
 }
@@ -370,7 +369,8 @@
   .FeedingFamilies img {
     position: absolute;
     top: 50%;
-
+    width: 50%;
+    left: 30%;
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
   }
 }
@@ -504,9 +504,9 @@
     flex-direction: column;
     align-items: center;
     background: url(../images/grey-background.jpg);
-    height: 600px;
     width: 100%;
     filter: drop-shadow(5px 5px 5px #222);
+    padding: 0 30px 0 30px;
   }
 
   .FeedingFamiliesText {
@@ -517,7 +517,7 @@
 
   .FeedingFamiliesText h2 {
     font-family: "Berlin Sans FB";
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     color: #6c2c2c;
@@ -525,7 +525,7 @@
   }
 
   .FeedingFamiliesText p {
-    max-width: 800px;
+    max-width: 400px;
     text-align: left;
     line-height: 35px;
     font-size: 18px;
@@ -547,7 +547,7 @@
 
   .FeedingFamilies img {
     position: absolute;
-    top: 50%;
+    width: 50%;
 
     filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
   }
