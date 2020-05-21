@@ -17,6 +17,7 @@ const IndexPage = () => (
         <Route path="/about-us" component={About} />
         <Route path="/" component={Home} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
