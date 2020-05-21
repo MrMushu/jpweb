@@ -105,6 +105,11 @@
   font-size: 22px;
 }
 @media (max-width: 650px) {
+  .CateringPhotos {
+    display: flex;
+    flex-direction: column;
+    max-height: 800px;
+  }
   .CateringPhotos img {
     width: 100%;
   }

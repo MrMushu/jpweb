@@ -9,8 +9,15 @@ import cateringHero from "../images/catering_hero.jpg";
 class Catering extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      package: 1,
+    };
   }
+
+  togglePackage = (i) => {
+    this.setState({ package: i });
+  };
+
   componentDidMount() {}
   render() {
     return (
