@@ -1,6 +1,6 @@
 .PageContainer {
   background-color: #f8f6f7;
-  height: 3500px;
+  height: 100%;
   width: 100%;
   padding-top: 150px;
   overflow: hidden;
@@ -458,7 +458,7 @@
   .RotisseriePhoto {
     width: 100%;
     max-width: 800px;
-    padding-top: 50px;
+    padding-top: 10%;
   }
 
   .RotisseriePhoto img {
