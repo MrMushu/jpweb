@@ -58,7 +58,7 @@ class Header extends React.Component {
             </div>
 
             <Link to="/features">{this.state.width}</Link>
-            <Link to="/pricing">Catering</Link>
+            <Link to="/catering">Catering</Link>
             <Link to="/help">E-Club</Link>
             <Link to="/help">Contact</Link>
             <Link to="/try">
@@ -86,12 +86,24 @@ class Header extends React.Component {
             </div>
             {this.state.menu ? (
               <div className="DropdownMenu">
-                <Link to="/">HOME</Link>
-                <Link to="/menu">MENU</Link>
-                <Link to="/catering">CATERING</Link>
-                <Link to="/eclub">E-CLUB</Link>
-                <Link to="/contact">CONTACT</Link>
-                <Link to="/locations">LOCATIONS</Link>
+                <Link to="/" onClick={this.toggleMenu}>
+                  HOME
+                </Link>
+                <Link to="/menu" onClick={this.toggleMenu}>
+                  MENU
+                </Link>
+                <Link to="/catering" onClick={this.toggleMenu}>
+                  CATERING
+                </Link>
+                <Link to="/eclub" onClick={this.toggleMenu}>
+                  E-CLUB
+                </Link>
+                <Link to="/contact" onClick={this.toggleMenu}>
+                  CONTACT
+                </Link>
+                <Link to="/locations" onClick={this.toggleMenu}>
+                  LOCATIONS
+                </Link>
               </div>
             ) : null}
           </div>

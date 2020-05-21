@@ -29,7 +29,7 @@ a {
   height: 1500px;
   width: 1500px;
   max-width: 1800px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   text-align: left;

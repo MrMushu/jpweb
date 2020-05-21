@@ -1,0 +1,103 @@
+.CateringContainer {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  color: rgb(63, 60, 60);
+}
+
+.CateringContainer h2 {
+  font-size: 28px;
+  color: rgb(63, 60, 60);
+  font-family: "Hand Crafted";
+}
+
+.CateringContainer p {
+  font-family: "Gunnar";
+}
+.CateringContainer a {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background-color: #d12728;
+  color: white;
+  font-size: 15px;
+  height: 40px;
+  width: 155px;
+  border-radius: 2px;
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 3px rgb(73, 72, 72));
+}
+
+.CateringHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 300px;
+  padding-top: 130px;
+  background: url(../images/catering_hero.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.CateringHero h2 {
+  color: white;
+}
+
+.CateringHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  padding: 5% 0 5% 0;
+}
+.CateringHeader h2 {
+  font-size: 28px;
+}
+.CateringHeader p {
+  max-width: 800px;
+  line-height: 35px;
+  width: 90%;
+}
+
+.CateringPhotos {
+  display: flex;
+  background-color: #f8f6f7;
+  max-height: 400px;
+  width: 100%;
+  padding: 2% 0 2% 0;
+}
+.CateringPhotos img {
+  object-fit: cover;
+  width: 50%;
+}
+.CateringPackagesHeader {
+  align-self: center;
+  display: flex;
+  text-align: left;
+  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+.CateringPackages {
+  background-color: #f8f6f7;
+  height: 300px;
+}
+.HowSteps {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 3% 0 3%;
+}
+
+.How {
+  width: 33%;
+  padding: 0 2%;
+}
+
+.How p {
+  font-size: 15px;
+}

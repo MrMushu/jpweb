@@ -6,6 +6,11 @@
   overflow: hidden;
 }
 
+.PageContainer {
+  font-family: "Gunnar";
+  color: rgb(63, 60, 60);
+}
+
 .AboutHeader h2 {
   color: #692c2b;
   font-family: "Berlin Sans FB";
