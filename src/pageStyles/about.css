@@ -29,7 +29,6 @@
   padding-left: 25px;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 50px;
 }
 
 .RotisserieText {
@@ -260,8 +259,7 @@
   .RotisseriePhoto {
     width: 100%;
     max-width: 800px;
-    padding-top: 50px;
-    padding: 20px;
+    padding: 10% 0 20% 0;
   }
 
   .RotisseriePhoto img {
@@ -271,8 +269,8 @@
     filter: drop-shadow(5px 5px 5px #222);
   }
   .BeginningsPhotos {
+    padding-top: 2%;
     background: url(../images/grey-background.jpg);
-
     width: 100%;
     filter: drop-shadow(5px 5px 5px #222);
   }
