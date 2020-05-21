@@ -46,7 +46,6 @@ a {
 
 .HeroHeader img {
   width: 100%;
-  height: auto;
   max-width: 1400px;
 }
 
@@ -595,6 +594,10 @@ a {
 @media (max-width: 650px) {
   .Hero {
     padding-top: 100px;
+  }
+  .HeroHeader {
+    width: 100%;
+    height: auto;
   }
   .OurFood {
     background: url(../images/grey-texture.jpg);
