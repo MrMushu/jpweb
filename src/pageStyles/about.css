@@ -210,7 +210,7 @@
     padding-right: 25px;
     align-items: center;
     justify-content: space-between;
-    height: 900px;
+
     padding-bottom: 100px;
   }
 
@@ -259,7 +259,7 @@
   .RotisseriePhoto {
     width: 100%;
     max-width: 800px;
-    padding: 10% 0 20% 0;
+    padding: 10% 0 5% 0;
   }
 
   .RotisseriePhoto img {
@@ -458,7 +458,6 @@
     width: 100%;
     max-width: 800px;
     padding-top: 50px;
-    padding: 20px;
   }
 
   .RotisseriePhoto img {
@@ -469,7 +468,6 @@
   }
   .BeginningsPhotos {
     background: url(../images/grey-background.jpg);
-
     width: 100%;
     filter: drop-shadow(5px 5px 5px #222);
   }
