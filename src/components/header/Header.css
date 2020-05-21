@@ -99,7 +99,7 @@
   .Dropdown {
     position: absolute;
     width: 100%;
-    height: 550px;
+    height: 450px;
     background-color: white;
     transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     border-bottom-width: 1;
@@ -114,9 +114,9 @@
   .DropdownMenu a {
     font-family: "Berlin Sans FB";
     font-weight: 400;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: rgb(88, 74, 70);
-    font-size: 28px;
+    font-size: 22px;
     padding: 5px 35px 25px 35px;
   }
 }
