@@ -31,6 +31,7 @@ const Home = () => (
       <div className="OurFoodHeader">
         <img style={{ transform: [{ rotateX: "180deg" }] }} src={accent}></img>
         <h1>OUR FOOD</h1>
+        <p></p>
         <img src={accent}></img>
       </div>
 

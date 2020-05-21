@@ -15,7 +15,6 @@ a {
 
 .Hero {
   padding-top: 150px;
-  height: 1800px;
   background-size: cover;
   justify-items: center;
   align-items: center;
@@ -591,6 +590,154 @@ a {
     border-radius: 2px;
     border: 2px black;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 650px) {
+  .OurFood {
+    background: url(../images/grey-texture.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: black;
+    background-color: white;
+    height: 850px;
+    z-index: 2;
+    width: 100%;
+    background-color: rgb(253, 250, 250);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .OurFood h1 {
+    font-family: "Hand Crafted";
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 28px;
+    color: #432727;
+  }
+
+  .OurFood a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-justify: center;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 18px;
+    height: 35px;
+    width: 30%;
+    max-width: 500px;
+    background-color: red;
+    border-radius: 3px;
+    border: 2px black;
+    box-shadow: 2px 2px 6px 1px grey;
+  }
+
+  .DescriptionSection img {
+    width: 300px;
+    height: auto;
+  }
+  .DescriptionSection h2 {
+    font-family: "Berlin Sans FB";
+    letter-spacing: 5px;
+    color: #533f31;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .DescriptionSection img {
+    width: 400px;
+    height: auto;
+  }
+
+  .DescriptionSection img:hover {
+    background: white;
+    color: black;
+    filter: drop-shadow(5px 5px 5px #222);
+    transform: translateY(-3px);
+  }
+
+  .Eclub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    background: url(../images/wood_dark.png);
+  }
+  .Eclub h1 {
+    font-family: "Berlin Sans FB";
+    letter-spacing: 12px;
+    font-weight: 600;
+    color: white;
+    font-size: 28px;
+    z-index: 2;
+  }
+  .EclubForm {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 30px 0;
+    display: flex;
+  }
+  .EclubForm input {
+    height: 50px;
+    width: 45%;
+    padding: 0 2%;
+    border: 2px black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    z-index: 2;
+  }
+  .EclubForm a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    font-weight: 800;
+    font-size: 14px;
+    width: 15%;
+    height: 50px;
+    color: white;
+    font-weight: 800;
+    background-color: red;
+    border-radius: 2px;
+    border: 2px black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    padding: 0 15px;
+    z-index: 2;
+  }
+  .EclubForm img {
+    position: absolute;
+    height: auto;
+    width: 87%;
+    z-index: 1;
+  }
+  .WhatsHappening {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 650px;
+    background-color: rgb(254, 255, 250);
+  }
+
+  .WhatsHappening h1 {
+    font-family: "Berlin Sans FB";
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #432727;
+    font-size: 28px;
+  }
+
+  .WhatsHappeningNews {
+    display: inline-flex;
+    justify-content: center;
   }
 }
 

@@ -72,6 +72,7 @@ class Header extends React.Component {
                 <Link to="/">
                   <img src={Logo}></img>
                 </Link>
+                <p>{this.state.width}</p>
               </div>
               <div className="Menu">
                 <button onClick={this.toggleMenu}>
