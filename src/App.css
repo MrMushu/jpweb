@@ -12,10 +12,18 @@
 
   src: local("Hand Crafted"), url("./fonts/HandCrafted.otf") format("otf"),
     url("./fonts/HandCrafted.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url("./fonts/HandCrafted.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("./fonts/HandCrafted.woff") format("woff"),
-    /* Safari, Android, iOS */ url("./fonts/HandCrafted.svg#OpenSans")
-      format("svg"); /* Legacy iOS */ /* IE9 Compat Modes */
+    url("./fonts/HandCrafted.woff2") format("woff2"),
+    url("./fonts/HandCrafted.woff") format("woff"),
+    url("./fonts/HandCrafted.svg#OpenSans") format("svg");
+}
+
+@font-face {
+  font-family: "Gunnar";
+  src: local("Gunnar"), url("./fonts/Gunnar-Regular.otf") format("otf"),
+    url("./fonts/Gunnar-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Gunnar-Regular.woff2") format("woff2"),
+    url("./fonts/Gunnar-Regular.woff") format("woff"),
+    url("./fonts/Gunnar-Regular.svg#OpenSans") format("svg");
 }
 
 @media (prefers-reduced-motion: no-preference) {
