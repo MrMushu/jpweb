@@ -41,14 +41,13 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: quto;
   background-color: rgb(75, 72, 72);
 }
 
 .HeroHeader img {
   width: 100%;
   height: auto;
-  max-width: 1800px;
+  max-width: 1400px;
 }
 
 .Tablet {
