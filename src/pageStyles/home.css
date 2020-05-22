@@ -63,7 +63,7 @@ p {
 .Hero h1 {
   margin: 0;
   color: white;
-  font-size: 60px;
+  font-size: 32px;
   line-height: 1.2;
   opacity: 0;
   animation: HeroAnimation;
@@ -135,6 +135,7 @@ p {
   flex-direction: column;
   justify-content: space-evenly;
 
+  padding: 5% 5% 10%;
   background-color: rgb(254, 255, 250);
 }
 
@@ -142,8 +143,9 @@ p {
   font-family: "Hand Crafted";
   letter-spacing: 9px;
   font-weight: 500;
+  padding: 5% 0 5%;
   color: #432727;
-  font-size: 48px;
+  font-size: 32px;
 }
 
 .WhatsHappeningNews {
@@ -197,7 +199,7 @@ p {
   font-family: "Hand Crafted";
   letter-spacing: 5px;
   color: #533f31;
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 630;
   text-align: center;
 }
@@ -217,7 +219,7 @@ p {
 .Description h1 {
   color: rgb(49, 49, 49);
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   z-index: 2;
 }
@@ -245,7 +247,7 @@ p {
   letter-spacing: 12px;
   font-weight: 600;
   color: white;
-  font-size: 48px;
+  font-size: 32px;
   z-index: 2;
   text-align: left;
 }
@@ -320,7 +322,7 @@ p {
   font-family: "Hand Crafted";
   letter-spacing: 2px;
   font-weight: 400;
-  font-size: 48px;
+  font-size: 32px;
   color: #432727;
 }
 
@@ -375,7 +377,7 @@ p {
 
 .OurFoodHeader h1 {
   font-family: "Hand Crafted";
-  font-size: 38;
+  font-size: 28;
   letter-spacing: 2px;
   font-weight: 400;
   color: #432727;
@@ -421,7 +423,7 @@ p {
     padding: 100px 20px;
   }
   .Hero h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
   .Hero p {
     font-size: 24px;

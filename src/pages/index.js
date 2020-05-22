@@ -8,6 +8,7 @@ import Home from "./home";
 import Features from "./features";
 import About from "./about";
 import Catering from "./catering";
+import Locations from "./locations";
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class IndexPage extends React.Component {
             <Route path="/features" component={Features} />
             <Route path="/about-us" component={About} />
             <Route path="/catering" component={Catering} />
+            <Route path="/locations" component={Locations} />
             <Route path="/" component={Home} />
           </Switch>
           <Footer />

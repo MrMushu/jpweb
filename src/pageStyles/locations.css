@@ -1,0 +1,25 @@
+.MapContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.StoreList {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  z-index: 4;
+  background-color: white;
+  filter: drop-shadow(1px 1px 2px rgb(172, 172, 172));
+}
+
+.Marker {
+  top: 50;
+  height: 75px;
+  width: 75px;
+}
+
+.Marker img {
+  height: 100%;
+  width: 100%;
+}

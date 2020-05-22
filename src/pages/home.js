@@ -5,12 +5,6 @@ import "../../src/pageStyles/home.css";
 import Carousel from "../components/carousel/carousel";
 import Footer from "../components/footer/footer";
 
-import tablet from "../images/tablet.png";
-import clover from "../images/clover-logo.png";
-import screen from "../icons/screen.png";
-import utensils from "../icons/utensils.png";
-import clock from "../icons/clock.png";
-import check from "../icons/check.png";
 import tacos from "../images/tacos.png";
 import burrito from "../images/burrito.png";
 import white from "../images/quarter_white.png";
@@ -26,6 +20,15 @@ class Home extends React.Component {
     super(props);
     this.state = {};
   }
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  };
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -67,7 +70,12 @@ class Home extends React.Component {
         <div className="Eclub">
           <h1>JOIN THE ROAST</h1>
           <div className="EclubForm">
-            <input type="text" name="email" value="email *" />
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              placeholder="E-mail"
+            />
             <Link to="/eclub">SIGN UP</Link>
             <img src={brush}></img>
           </div>
@@ -83,7 +91,12 @@ class Home extends React.Component {
         <div className="Location">
           <h1>FIND A LOCATION</h1>
           <div className="EclubForm">
-            <input type="text" name="email" value="Zip Code *" />
+            <input
+              type="text"
+              name="zip"
+              value={this.state.zip}
+              placeholder="Zip Code *"
+            />
             <Link to="/locations">FIND STORE</Link>
           </div>
         </div>

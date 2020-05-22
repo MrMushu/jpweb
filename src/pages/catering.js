@@ -65,6 +65,7 @@ class Catering extends React.Component {
           </div>
 
           <p>
+            Minimum 300 people <br />
             Order Full-Service Catering at Juan Pollo! We will deliver and serve
             your party goers the family-style meals we are famous for! Whether
             it's a corporate event, wedding, or birthday party, our team is
@@ -81,7 +82,7 @@ class Catering extends React.Component {
         <div className="CateringPackagesHeader">
           <div className="Order">
             <h2>FULL-SERVICE PACKAGES</h2>
-            <p>Minimum 300 people</p>
+            <p>Learn more about our catering options.</p>
           </div>
           <div className="Order">
             <Link>ORDER NOW</Link>
@@ -142,8 +143,9 @@ class Catering extends React.Component {
               </div>
               <div className="StepDescription">
                 <p>
-                  Give us a call with details about your event. We'll work with
-                  you to customize the perfect meal option for you guests.
+                  Give us a call or fill out the form below with details about
+                  your event. We'll work with you to customize the perfect meal
+                  option for you guests.
                 </p>
               </div>
             </div>
