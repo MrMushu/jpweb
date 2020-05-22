@@ -2,7 +2,7 @@
   background-color: white;
   position: fixed;
   width: 100%;
-  height: 130px;
+  height: 80px;
   top: 0;
   z-index: 100;
   flex-direction: row;
@@ -21,7 +21,7 @@
 }
 
 .HeaderGroup {
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(6, auto);
@@ -30,17 +30,18 @@
 }
 
 .HeaderGroup img {
-  width: 150px;
+  width: 80px;
 }
 
 .Header a {
-  color: black;
+  color: rgb(65, 47, 47);
+  font-size: 16px;
   font-weight: 700;
 }
 
 .Header button {
   padding: 8px 20px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   font-weight: 700;
   border-radius: 10px;

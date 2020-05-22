@@ -157,10 +157,12 @@
 .Package {
   display: flex;
   max-width: 1300px;
+  width: 100%;
 }
 .Package img {
   object-fit: cover;
   padding: 2% 0 0 0;
+
   width: 50%;
 }
 .PackageDescription {
