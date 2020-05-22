@@ -134,7 +134,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 650px;
+
   background-color: rgb(254, 255, 250);
 }
 
@@ -375,7 +375,7 @@ p {
 
 .OurFoodHeader h1 {
   font-family: "Hand Crafted";
-  font-size: 32;
+  font-size: 38;
   letter-spacing: 2px;
   font-weight: 400;
   color: #432727;
@@ -434,7 +434,7 @@ p {
     justify-content: space-evenly;
     color: black;
     background-color: white;
-    height: 1150px;
+
     z-index: 2;
     width: 100%;
     background-color: rgb(253, 250, 250);
@@ -458,10 +458,17 @@ p {
     box-shadow: 2px 2px 6px 1px grey;
     width: auto;
   }
+  .OurFoodHeader {
+    padding: 5%;
+  }
+  .OurFoodHeader h1 {
+    font-size: 24px;
+  }
   .OurFoodCategories {
     align-self: center;
     display: flex;
     flex-direction: column;
+    padding: 0 0 5%;
   }
   .DescriptionSection {
     text-align: center;
@@ -469,16 +476,17 @@ p {
     justify-self: center;
     justify-items: center;
     background-color: transparent;
+    padding: 0 0 5%;
   }
   .DescriptionSection h2 {
     letter-spacing: 5px;
     color: #533f31;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 630;
     text-align: center;
   }
   .DescriptionSection img {
-    width: 450px;
+    width: 350px;
     height: auto;
   }
   .DescriptionSection img:hover {
@@ -499,7 +507,7 @@ p {
     letter-spacing: 12px;
     font-weight: 600;
     color: white;
-    font-size: 36px;
+    font-size: 22px;
     z-index: 2;
   }
   .EclubForm {
@@ -547,7 +555,6 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 650px;
     padding: 5% 5% 10%;
     background-color: rgb(254, 255, 250);
   }
@@ -556,6 +563,7 @@ p {
     font-weight: 500;
     color: #432727;
     padding: 5% 0 5%;
+    font-size: 22px;
   }
   .WhatsHappeningNews {
     display: inline-flex;
