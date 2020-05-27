@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import axios from "axios";
+
 import "../pageStyles/about.css";
 import "../pageStyles/locations.css";
 
@@ -8,20 +10,21 @@ import pin from "../icons/pin.png";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 
 class Locations extends React.Component {
-  static defaultProps = {
-    center: {
-      lat: 34.108787,
-      lng: -117.312842,
-    },
-    zoom: 12,
-  };
-  state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {
-      hours: [],
-    },
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showingInfoWindow: true,
+      activeMarker: {},
+      selectedPlace: {
+        hours: [],
+      },
+      location: {
+        lat: 34.108787,
+        lng: -117.312842,
+      },
+    };
+  }
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
@@ -29,18 +32,68 @@ class Locations extends React.Component {
       showingInfoWindow: true,
     });
 
+  searchLocation = (code) => {
+    var self = this;
+    axios
+      .get(
+        "https://maps.googleapis.com/maps/api/geocode/json?address=91710&key=AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk"
+      )
+      .then((res) => {
+        var data = res.data;
+        console.log(data);
+        var location = data.results[0].geometry.location;
+        console.log(location);
+        self.setState({ location: location });
+      });
+    console.log(this.findNearby(this.state.location, stores[0].position));
+  };
+
+  findNearby = (mk1, mk2) => {
+    var R = 3958.8; // Radius of the Earth in miles
+    var rlat1 = mk1.lat * (Math.PI / 180); // Convert degrees to radians
+    var rlat2 = mk2.lat * (Math.PI / 180); // Convert degrees to radians
+    var difflat = rlat2 - rlat1; // Radian difference (latitudes)
+    var difflon = mk2.lng - mk1.lng * (Math.PI / 180); // Radian difference (longitudes)
+
+    var d =
+      2 *
+      R *
+      Math.asin(
+        Math.sqrt(
+          Math.sin(difflat / 2) * Math.sin(difflat / 2) +
+            Math.cos(rlat1) *
+              Math.cos(rlat2) *
+              Math.sin(difflon / 2) *
+              Math.sin(difflon / 2)
+        )
+      );
+    return d;
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+
   render() {
     return (
-      <div>
+      <div style={{ height: "100%" }}>
         <div>
           <h2>Locations</h2>
+          <p></p>
         </div>
         <div className="MapContainer">
           {this.state.showingInfoWindow ? (
             <div className="StoreList">
+              <div className="Search">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="City, State or ZIP Code"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+                <Link onClick={this.searchLocation}>Search</Link>
+              </div>
               <h4>{this.state.selectedPlace.address}</h4>
               <div>
                 <h5>DIRECTIONS</h5>
@@ -61,7 +114,8 @@ class Locations extends React.Component {
               google={this.props.google}
               zoom={13}
               style={mapStyles}
-              initialCenter={this.props.center}
+              initialCenter={this.state.location}
+              center={this.state.location}
             >
               {stores.map((store, i) => (
                 <Marker
@@ -98,14 +152,15 @@ export default GoogleApiWrapper({
 })(Locations);
 
 const mapStyles = {
-  width: "100%",
-  height: "100%",
+  width: "60%",
+  height: "500px",
 };
 
 const stores = [
   {
     name: "San Bernardino",
-    address: "1258 W 5th St, San Bernardino, CA 92411",
+    address: "1258 W 5th St",
+    city: "San Bernardino, CA 92411",
     phone: "(909) 885-5598",
     hours: {
       Monday: "9am-9pm",

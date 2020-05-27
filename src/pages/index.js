@@ -21,7 +21,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={{ height: "100%" }}>
           <Header />
           <Switch>
             <Route path="/features" component={Features} />
