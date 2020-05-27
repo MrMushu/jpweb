@@ -14,60 +14,114 @@ class Locations extends React.Component {
     super(props);
 
     this.state = {
-      showingInfoWindow: true,
+      showingInfoWindow:false,
+      storeDetails: false,
       activeMarker: {},
-      selectedPlace: {
-        hours: [],
-      },
+      selectedPlace: [{
+      }],
       location: {
         lat: 34.108787,
         lng: -117.312842,
       },
+      showNearby: false
     };
   }
-  onMarkerClick = (props, marker, e) =>
+
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
     this.setState({
-      selectedPlace: props,
+      [name]: value,
+    });
+
+    console.log('zip: ', this.state.zip)
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    {this.setState({
+      selectedPlace: [props],
       activeMarker: marker,
       showingInfoWindow: true,
+      storeDetails:true,
+      showNearby: true
     });
+   
+
+}
+  onNearbyClick = (props, store) =>{
+    console.log('STORE: ',props)
+    this.setState({
+      selectedPlace:[],
+      storeDetails: true,
+      showNearby: true
+    })
+
+      this.setState({
+        selectedPlace: [props],
+        location: props.position
+      })
+    
+  }
+
 
   searchLocation = (code) => {
     var self = this;
     axios
       .get(
-        "https://maps.googleapis.com/maps/api/geocode/json?address=91710&key=AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk"
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.zip}&key=AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk`
       )
       .then((res) => {
         var data = res.data;
         console.log(data);
-        var location = data.results[0].geometry.location;
-        console.log(location);
-        self.setState({ location: location });
-      });
-    console.log(this.findNearby(this.state.location, stores[0].position));
+
+        if (data.status === "OK") {
+          var location = data.results[0].geometry.location;
+          self.setState({ location: location});
+          this.findNearby(this.state.location)
+        } else {
+          alert("ZERO RESULTS FOUND")
+        }
+       
+      })
+     
+   
   };
 
-  findNearby = (mk1, mk2) => {
-    var R = 3958.8; // Radius of the Earth in miles
-    var rlat1 = mk1.lat * (Math.PI / 180); // Convert degrees to radians
-    var rlat2 = mk2.lat * (Math.PI / 180); // Convert degrees to radians
-    var difflat = rlat2 - rlat1; // Radian difference (latitudes)
-    var difflon = mk2.lng - mk1.lng * (Math.PI / 180); // Radian difference (longitudes)
+  findDistance = (mk1, mk2) => {
+    var radlat1 = Math.PI * mk1.lat/180;
+		var radlat2 = Math.PI * mk2.lat/180;
+		var theta = mk1.lng - mk2.lng;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344 
+    
+  
+    return dist
+  }
 
-    var d =
-      2 *
-      R *
-      Math.asin(
-        Math.sqrt(
-          Math.sin(difflat / 2) * Math.sin(difflat / 2) +
-            Math.cos(rlat1) *
-              Math.cos(rlat2) *
-              Math.sin(difflon / 2) *
-              Math.sin(difflon / 2)
-        )
-      );
-    return d;
+  findNearby = (location) => { 
+    var selectedPlaces = []
+    for (var i=0; i<stores.length; i++){
+      var distance = this.findDistance(location, stores[i].position)
+      if ( distance < 20 ) {
+        var store = stores[i]
+        store.distance = distance.toFixed(2)
+        selectedPlaces.push(store)
+      }
+    }
+    console.log("SELECTED: ", selectedPlaces)
+    var sortedPlaces = selectedPlaces.sort((a,b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
+
+    this.setState({ selectedPlace: sortedPlaces})
+    this.setState({showNearby: true, storeDetails:false})
   };
 
   componentDidMount() {
@@ -82,33 +136,77 @@ class Locations extends React.Component {
           <p></p>
         </div>
         <div className="MapContainer">
-          {this.state.showingInfoWindow ? (
+          {!this.state.showNearby ? (
             <div className="StoreList">
+           
               <div className="Search">
                 <input
                   type="text"
-                  name="name"
+                  name="zip"
                   placeholder="City, State or ZIP Code"
-                  value={this.state.name}
+                  value={this.state.zip}
                   onChange={this.handleChange}
                 />
                 <Link onClick={this.searchLocation}>Search</Link>
               </div>
-              <h4>{this.state.selectedPlace.address}</h4>
-              <div>
-                <h5>DIRECTIONS</h5>
-                <h5>Phone</h5>
-                <h5>Hours:</h5>
-                {Object.keys(this.state.selectedPlace.hours).map(
-                  (value, label) => (
-                    <h5>
-                      {value}: {this.state.selectedPlace.hours[value]}
-                    </h5>
-                  )
-                )}
+              <div className="SearchDirections">
+                <img src={emblem}></img>
+                <p>
+                  Use the search bar above to find nearby Juan Pollo locations.
+                </p>
               </div>
+            
             </div>
-          ) : null}
+          ) : 
+          <div className="StoreList">
+           
+          <div className="Search">
+            <input
+              type="text"
+              name="zip"
+              placeholder="City, State or ZIP Code"
+              value={this.state.zip}
+              onChange={this.handleChange}
+            />
+            <Link onClick={this.searchLocation}>Search</Link>
+          </div>
+          {this.state.storeDetails? (
+            <div> 
+          
+              {this.state.selectedPlace.map((store) => (
+                <div className='StoreInfo'>
+                  <h4>{store.address}</h4>
+                  <div className="StoreLinks">
+                    <h5>Directions</h5>
+                    <h5>Phone: {store.phone}</h5>
+                  </div>
+                  <div>
+                  
+                    {Object.keys(store.hours).map(
+                      (value, label) => (
+                        <h5>
+                          {value}: {store.hours[value]}
+                        </h5>
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}        
+            </div>
+          ):<div> 
+              <h6>Nearby</h6>
+              {this.state.selectedPlace.map((store) => (
+                <div className='StoreInfo' onClick={() => this.onNearbyClick(store)}>
+                  <h4>{store.address}</h4>
+                  <h6>Distance: {store.distance} mi.</h6>
+                  <div>
+                
+                    
+                  </div>
+                </div>
+              ))}        
+            </div>}
+        </div>}
           <div style={{ height: "500px", overflow: "hidden" }}>
             <Map
               google={this.props.google}
@@ -117,15 +215,15 @@ class Locations extends React.Component {
               initialCenter={this.state.location}
               center={this.state.location}
             >
-              {stores.map((store, i) => (
+              {stores.map((selectedStore, i) => (
                 <Marker
                   key={i}
                   style={{ width: "50px", height: "50px" }}
                   title={"The marker`s title will appear as a tooltip."}
-                  address={store.address}
-                  phone={store.phone}
-                  hours={store.hours}
-                  position={store.position}
+                  address={selectedStore.address}
+                  phone={selectedStore.phone}
+                  hours={selectedStore.hours}
+                  position={selectedStore.position}
                   onClick={this.onMarkerClick}
                 />
               ))}
@@ -134,8 +232,8 @@ class Locations extends React.Component {
                 visible={this.state.showingInfoWindow}
               >
                 <div>
-                  <h2>{this.state.selectedPlace.address}</h2>
-                  <h2>Phone: {this.state.selectedPlace.phone}</h2>
+                  <h2>{this.state.selectedPlace[0].address}</h2>
+                  <h2>Phone: {this.state.selectedPlace[0].phone}</h2>
                   <a>Directions</a>
                 </div>
               </InfoWindow>
@@ -159,7 +257,7 @@ const mapStyles = {
 const stores = [
   {
     name: "San Bernardino",
-    address: "1258 W 5th St",
+    address: "1258 W 5th St.",
     city: "San Bernardino, CA 92411",
     phone: "(909) 885-5598",
     hours: {
@@ -178,7 +276,8 @@ const stores = [
   },
   {
     name: "Highland",
-    address: "1014 E Highland Ave, San Bernardino, CA 92404",
+    address: "1014 E Highland Ave",
+    city: "San Bernardino, CA 92404",
     phone: "(909) 881-4191",
     hours: {
       Monday: "10am-9pm",
