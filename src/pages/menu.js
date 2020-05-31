@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../pageStyles/menu.css";
-import burrito from "../images/burrito.jpg";
+
 import quarter_white from "../images/quarter_white.png";
 import half_chicken from "../images/half_chicken.jpg";
 import quarter_dark from "../images/quarter_dark.jpg";
@@ -10,6 +10,14 @@ import family from "../images/family.jpg";
 import jumbo from "../images/jumbo.jpg";
 
 import tacos from "../images/tacos.png";
+import burrito from "../images/burrito.jpg";
+import salad from "../images/salad.jpg";
+import bowl from "../images/bowl.jpg";
+
+import rice from "../images/rice.jpg";
+import beans from "../images/beans.jpg";
+import potato from "../images/potato.jpg";
+import green from "../images/green.jpg";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -153,14 +161,14 @@ var lineItems = [
         line1: "Chicken Breast, ",
         line2: "Lettuce, Cheese, Tomato, Carrots ",
         line3: "Salsa & Dressing",
-        img: burrito,
+        img: salad,
       },
       {
         item: "Juan's Big Bowl",
         line1: "Shredded Chicken, Rice, Beans",
         line2: "Cheese, Green Onions",
         line3: "Salsa & Tortillas",
-        img: burrito,
+        img: bowl,
       },
     ],
   },
@@ -169,19 +177,19 @@ var lineItems = [
     items: [
       {
         item: "Rice",
-        img: burrito,
+        img: rice,
       },
       {
         item: "Beans",
-        img: burrito,
+        img: beans,
       },
       {
         item: "Potato Salad",
-        img: burrito,
+        img: potato,
       },
       {
         item: "Green Salad",
-        img: burrito,
+        img: green,
       },
     ],
   },
