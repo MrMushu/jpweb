@@ -5,6 +5,9 @@ import burrito from "../images/burrito.jpg";
 import quarter_white from "../images/quarter_white.png";
 import half_chicken from "../images/half_chicken.jpg";
 import quarter_dark from "../images/quarter_dark.jpg";
+import mini from "../images/mini.jpg";
+import family from "../images/family.jpg";
+import jumbo from "../images/jumbo.jpg";
 
 import tacos from "../images/tacos.png";
 
@@ -110,21 +113,21 @@ var lineItems = [
         line1: "1 Chicken",
         line2: "Choice of 3 Medium Sides",
         line3: "Salsa & Tortillas",
-        img: burrito,
+        img: mini,
       },
       {
         item: "Family Pak",
         line1: "2 Chickens",
         line2: "Choice of 3 Large Sides",
         line3: "Salsa & Tortillas",
-        img: burrito,
+        img: family,
       },
       {
         item: "Jumbo Pak",
         line1: "3 Chickens",
         line2: "Choice of 3 X-Large Sides",
         line3: "Salsa & Tortillas",
-        img: burrito,
+        img: jumbo,
       },
     ],
   },
