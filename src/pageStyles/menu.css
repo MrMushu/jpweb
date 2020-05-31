@@ -80,6 +80,13 @@
 }
 
 @media (max-width: 650px) {
+    .Page p {
+        font-size: 15px;
+        color: rgb(92, 86, 86)
+    }
+    .MenuHeader h2 {
+        font-size: 24px
+    }
     .MenuCategories h2 {
         font-size: 14px;
     }
@@ -101,7 +108,8 @@
         text-align: center
     }
     .ItemDescription h3 {
-        font-size: 18px
+        font-size: 18px;
+        width: 100%
     }
     .ItemDescription p {
         font-size: 12px
