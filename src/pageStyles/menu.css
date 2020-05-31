@@ -4,6 +4,13 @@
     font-family: "Hand Crafted";
 }
 
+.MenuHeader {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
 .MenuCategories {
     display: flex;
     justify-content: space-evenly;
@@ -11,11 +18,16 @@
 
 .MenuCategories h2 {
     font-size: 18px;
-    font-weight: 500
+    font-weight: 500;
+    color: rgb(87, 84, 78)
 }
 
 .CategorySelected {
     border-bottom: 3px solid rgb(184, 49, 49);
+}
+
+.CategorySelected h2 {
+    color: black
 }
 
 .CategorySelected:hover {
@@ -32,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5% 0 5%;
+    padding: 5%;
 }
 
 .Items {
@@ -47,9 +59,16 @@
     padding: 2.5% 0 2.5%;
 }
 
-.Items img {
+.ItemImage {
+    display: flex;
     width: 50%;
     max-width: 1000px;
+    align-items: center;
+    padding-left: 10%
+}
+
+.ItemImage img {
+    width: 75%;
 }
 
 .ItemDescription {
@@ -58,4 +77,33 @@
 
 .ItemDescription p {
     font-size: 20px
+}
+
+@media (max-width: 650px) {
+    .MenuCategories h2 {
+        font-size: 14px;
+    }
+    .Items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5%
+    }
+    .ItemImage {
+        width: 80%
+    }
+    .ItemImage img {
+        width: 100%;
+    }
+    .ItemDescription {
+        padding: 5% 0 10%;
+        width: 100%;
+        text-align: center
+    }
+    .ItemDescription h3 {
+        font-size: 18px
+    }
+    .ItemDescription p {
+        font-size: 12px
+    }
 }
