@@ -1,0 +1,61 @@
+.Page {
+    height: 100%;
+    padding-top: 150px;
+    font-family: "Hand Crafted";
+}
+
+.MenuCategories {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.MenuCategories h2 {
+    font-size: 18px;
+    font-weight: 500
+}
+
+.CategorySelected {
+    border-bottom: 3px solid rgb(184, 49, 49);
+}
+
+.CategorySelected:hover {
+    cursor: pointer;
+    border-bottom: 3px solid rgb(184, 49, 49);
+}
+
+.Category:hover {
+    cursor: pointer;
+    border-bottom: 2px solid rgb(230, 155, 155);
+}
+
+.ItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0 5%;
+}
+
+.Items {
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    align-self: center;
+    text-align: left;
+    font-family: "Gunnar";
+    letter-spacing: 4px;
+    align-items: center;
+    padding: 2.5% 0 2.5%;
+}
+
+.Items img {
+    width: 50%;
+    max-width: 1000px;
+}
+
+.ItemDescription {
+    width: 50%
+}
+
+.ItemDescription p {
+    font-size: 20px
+}

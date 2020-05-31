@@ -42,43 +42,44 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="FooterContainer">
-        <div className="About">
-          <h3>Company</h3>
-          <Link
-            activeStyle={{
-              fontWeight: "bold",
-              color: "red",
-            }}
-            to="/about-us"
-          >
-            About Us
-          </Link>
-          <Link to="/values">Our Values</Link>
-        </div>
-
         <div>
-          <h3>Follow Us</h3>
-          <div className="Social">
-            <div className="Icon">
-              <img src={facebook} />
-            </div>
-            <div className="Icon">
-              <img src={instagram} />
+          <div className="About">
+            <h3>Company</h3>
+            <Link
+              activeStyle={{
+                fontWeight: "bold",
+                color: "red",
+              }}
+              to="/about-us"
+            >
+              About Us
+            </Link>
+            <Link to="/values">Our Values</Link>
+          </div>
+          <div>
+            <h3>Follow Us</h3>
+            <div className="Social">
+              <div className="Icon">
+                <img src={facebook} />
+              </div>
+              <div className="Icon">
+                <img src={instagram} />
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="Contact">
-          <h3>Contact Us</h3>
-          <h5>info@juanpollo.com</h5>
-          <h5>(909) 885-6324</h5>
-        </div>
-
-        <div className="Disclaimer">
-          <h6>2020 Juan Pollo</h6>
-          <Link to="/terms">Terms of Use</Link>
-          <Link to="/privacy">Privacy Policy</Link>
-          <Link to="/accessibility">Accessibility</Link>
+        <div>
+          <div className="Contact">
+            <h3>Contact Us</h3>
+            <h5>info@juanpollo.com</h5>
+            <h5>(909) 885-6324</h5>
+          </div>
+          <div className="Disclaimer">
+            <h6>2020 Juan Pollo</h6>
+            <Link to="/terms">Terms of Use</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/accessibility">Accessibility</Link>
+          </div>
         </div>
       </div>
     );

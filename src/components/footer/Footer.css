@@ -1,4 +1,6 @@
 .FooterContainer {
+  display: flex;
+  justify-content: space-evenly;
   position: absolute;
   background-color: rgb(233, 223, 202);
   height: 500px;

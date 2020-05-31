@@ -6,6 +6,7 @@ import Footer from "../components/footer/footer";
 import Home from "./home";
 
 import Features from "./features";
+import Menu from "./menu";
 import About from "./about";
 import Catering from "./catering";
 import Locations from "./locations";
@@ -24,7 +25,7 @@ class IndexPage extends React.Component {
         <div style={{ height: "100%" }}>
           <Header />
           <Switch>
-            <Route path="/features" component={Features} />
+            <Route path="/menu" component={Menu} />
             <Route path="/about-us" component={About} />
             <Route path="/catering" component={Catering} />
             <Route path="/locations" component={Locations} />

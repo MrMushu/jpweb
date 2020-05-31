@@ -6,7 +6,10 @@ import "../pageStyles/about.css";
 import "../pageStyles/locations.css";
 
 import emblem from "../icons/emblem.png";
+import search from "../icons/search.png";
 import pin from "../icons/pin.png";
+import navigate from "../icons/navigate.png";
+import phone from "../icons/phone.png";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 
 class Locations extends React.Component {
@@ -14,16 +17,15 @@ class Locations extends React.Component {
     super(props);
 
     this.state = {
-      showingInfoWindow:false,
+      showingInfoWindow: false,
       storeDetails: false,
       activeMarker: {},
-      selectedPlace: [{
-      }],
+      selectedPlace: [{}],
       location: {
         lat: 34.108787,
         lng: -117.312842,
       },
-      showNearby: false
+      showNearby: false,
     };
   }
 
@@ -36,35 +38,31 @@ class Locations extends React.Component {
       [name]: value,
     });
 
-    console.log('zip: ', this.state.zip)
+    console.log("zip: ", this.state.zip);
   };
 
-  onMarkerClick = (props, marker, e) =>
-    {this.setState({
+  onMarkerClick = (props, marker, e) => {
+    this.setState({
       selectedPlace: [props],
       activeMarker: marker,
       showingInfoWindow: true,
-      storeDetails:true,
-      showNearby: true
-    });
-   
-
-}
-  onNearbyClick = (props, store) =>{
-    console.log('STORE: ',props)
-    this.setState({
-      selectedPlace:[],
       storeDetails: true,
-      showNearby: true
-    })
+      showNearby: true,
+    });
+  };
+  onNearbyClick = (props, store) => {
+    console.log("STORE: ", props);
+    this.setState({
+      selectedPlace: [],
+      storeDetails: true,
+      showNearby: true,
+    });
 
-      this.setState({
-        selectedPlace: [props],
-        location: props.position
-      })
-    
-  }
-
+    this.setState({
+      selectedPlace: [props],
+      location: props.position,
+    });
+  };
 
   searchLocation = (code) => {
     var self = this;
@@ -78,50 +76,50 @@ class Locations extends React.Component {
 
         if (data.status === "OK") {
           var location = data.results[0].geometry.location;
-          self.setState({ location: location});
-          this.findNearby(this.state.location)
+          self.setState({ location: location });
+          this.findNearby(this.state.location);
         } else {
-          alert("ZERO RESULTS FOUND")
+          alert("ZERO RESULTS FOUND");
         }
-       
-      })
-     
-   
+      });
   };
 
   findDistance = (mk1, mk2) => {
-    var radlat1 = Math.PI * mk1.lat/180;
-		var radlat2 = Math.PI * mk2.lat/180;
-		var theta = mk1.lng - mk2.lng;
-		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-    dist = dist * 1.609344 
-    
-  
-    return dist
-  }
+    var radlat1 = (Math.PI * mk1.lat) / 180;
+    var radlat2 = (Math.PI * mk2.lat) / 180;
+    var theta = mk1.lng - mk2.lng;
+    var radtheta = (Math.PI * theta) / 180;
+    var dist =
+      Math.sin(radlat1) * Math.sin(radlat2) +
+      Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (dist > 1) {
+      dist = 1;
+    }
+    dist = Math.acos(dist);
+    dist = (dist * 180) / Math.PI;
+    dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344;
 
-  findNearby = (location) => { 
-    var selectedPlaces = []
-    for (var i=0; i<stores.length; i++){
-      var distance = this.findDistance(location, stores[i].position)
-      if ( distance < 20 ) {
-        var store = stores[i]
-        store.distance = distance.toFixed(2)
-        selectedPlaces.push(store)
+    return dist;
+  };
+
+  findNearby = (location) => {
+    var selectedPlaces = [];
+    for (var i = 0; i < stores.length; i++) {
+      var distance = this.findDistance(location, stores[i].position);
+      if (distance < 20) {
+        var store = stores[i];
+        store.distance = distance.toFixed(2);
+        selectedPlaces.push(store);
       }
     }
-    console.log("SELECTED: ", selectedPlaces)
-    var sortedPlaces = selectedPlaces.sort((a,b) => Number(a.distance) > Number(b.distance) ? 1 : -1)
+    console.log("SELECTED: ", selectedPlaces);
+    var sortedPlaces = selectedPlaces.sort((a, b) =>
+      Number(a.distance) > Number(b.distance) ? 1 : -1
+    );
 
-    this.setState({ selectedPlace: sortedPlaces})
-    this.setState({showNearby: true, storeDetails:false})
+    this.setState({ selectedPlace: sortedPlaces });
+    this.setState({ showNearby: true, storeDetails: false });
   };
 
   componentDidMount() {
@@ -138,7 +136,6 @@ class Locations extends React.Component {
         <div className="MapContainer">
           {!this.state.showNearby ? (
             <div className="StoreList">
-           
               <div className="Search">
                 <input
                   type="text"
@@ -147,7 +144,9 @@ class Locations extends React.Component {
                   value={this.state.zip}
                   onChange={this.handleChange}
                 />
-                <Link onClick={this.searchLocation}>Search</Link>
+                <Link onClick={this.searchLocation}>
+                  <img src={search} />
+                </Link>
               </div>
               <div className="SearchDirections">
                 <img src={emblem}></img>
@@ -155,58 +154,71 @@ class Locations extends React.Component {
                   Use the search bar above to find nearby Juan Pollo locations.
                 </p>
               </div>
-            
             </div>
-          ) : 
-          <div className="StoreList">
-           
-          <div className="Search">
-            <input
-              type="text"
-              name="zip"
-              placeholder="City, State or ZIP Code"
-              value={this.state.zip}
-              onChange={this.handleChange}
-            />
-            <Link onClick={this.searchLocation}>Search</Link>
-          </div>
-          {this.state.storeDetails? (
-            <div> 
-          
-              {this.state.selectedPlace.map((store) => (
-                <div className='StoreInfo'>
-                  <h4>{store.address}</h4>
-                  <div className="StoreLinks">
-                    <h5>Directions</h5>
-                    <h5>Phone: {store.phone}</h5>
-                  </div>
-                  <div>
-                  
-                    {Object.keys(store.hours).map(
-                      (value, label) => (
-                        <h5>
-                          {value}: {store.hours[value]}
-                        </h5>
-                      )
-                    )}
-                  </div>
+          ) : (
+            <div className="StoreList">
+              <div className="Search">
+                <input
+                  type="text"
+                  name="zip"
+                  placeholder="City, State or ZIP Code"
+                  value={this.state.zip}
+                  onChange={this.handleChange}
+                />
+                <Link onClick={this.searchLocation}>
+                  <img src={search} />
+                </Link>
+              </div>
+              {this.state.storeDetails ? (
+                <div>
+                  {this.state.selectedPlace.map((store) => (
+                    <div className="StoreInfo">
+                      <h4>{store.address}</h4>
+                      <div className="StoreLinks">
+                        <div
+                          className="Link"
+                          onClick={() =>
+                            window.open(
+                              `https://www.google.com/maps/dir//${store.position.lat},${store.position.lng}/`
+                            )
+                          }
+                        >
+                          <h5>Directions</h5>
+                          <img src={navigate}></img>
+                        </div>
+                        <div className="Link">
+                          <h5>Phone: {store.phone}</h5>
+                          <img src={phone}></img>
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Hours:</h4>
+                        {Object.keys(store.hours).map((value, label) => (
+                          <h5>
+                            {value}: {store.hours[value]}
+                          </h5>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}        
+              ) : (
+                <div>
+                  <h6>Nearby</h6>
+                  {this.state.selectedPlace.map((store) => (
+                    <div
+                      className="StoreInfo"
+                      onClick={() => this.onNearbyClick(store)}
+                    >
+                      <h4>{store.address}</h4>
+                      <h6>Distance: {store.distance} mi.</h6>
+                      <div></div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          ):<div> 
-              <h6>Nearby</h6>
-              {this.state.selectedPlace.map((store) => (
-                <div className='StoreInfo' onClick={() => this.onNearbyClick(store)}>
-                  <h4>{store.address}</h4>
-                  <h6>Distance: {store.distance} mi.</h6>
-                  <div>
-                
-                    
-                  </div>
-                </div>
-              ))}        
-            </div>}
-        </div>}
+          )}
           <div style={{ height: "500px", overflow: "hidden" }}>
             <Map
               google={this.props.google}
