@@ -57,9 +57,9 @@ class Header extends React.Component {
               </Link>
             </div>
 
-            <Link to="/menu">{this.state.width}</Link>
+            <Link to="/menu">Menu</Link>
             <Link to="/catering">Catering</Link>
-            <Link to="/help">E-Club</Link>
+            <Link to="/help">{this.state.width}</Link>
             <Link to="/help">Contact</Link>
             <Link to="/locations">
               <button>Locations</button>
@@ -86,9 +86,6 @@ class Header extends React.Component {
             </div>
             {this.state.menu ? (
               <div className="DropdownMenu">
-                <Link to="/" onClick={this.toggleMenu}>
-                  HOME
-                </Link>
                 <Link to="/menu" onClick={this.toggleMenu}>
                   MENU
                 </Link>
