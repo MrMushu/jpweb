@@ -19,6 +19,8 @@ import beans from "../images/beans.jpg";
 import potato from "../images/potato.jpg";
 import green from "../images/green.jpg";
 
+import tortillas from "../images/tortillas.jpg";
+
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +54,7 @@ class Menu extends React.Component {
           <h2>Menu</h2>
           <div className="Line" />
         </div>
-        <p>Select category below</p>
+        <p>Select a category</p>
         <div className="MenuCategories">
           {lineItems.map((category, i) => (
             <div
@@ -83,7 +85,7 @@ class Menu extends React.Component {
             </div>
           ))}
         </div>
-        <h4>Sides</h4>
+        <h4>Choice of Sides</h4>
         <div className="Sides">
           <div className="Side">
             <img src={rice} />
@@ -116,13 +118,18 @@ class Menu extends React.Component {
           </div>
           <div className="Tortillas">
             <h4>Tortillas</h4>
+
             <div className="ST">
-              <div>
-                <h6>Flour</h6>
+              <h2>Flour</h2>
+
+              <div className="TriangleTop">
+                <img src={tortillas} />
               </div>
-              <div>
-                <h6>Corn</h6>
+
+              <div className="TriangleBottom">
+                <img src={tortillas} />
               </div>
+              <h2 style={{ paddingTop: "50%" }}>Corn</h2>
             </div>
           </div>
         </div>

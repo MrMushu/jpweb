@@ -104,8 +104,34 @@
   display: flex;
   justify-content: space-evenly;
   color: rgb(65, 52, 51);
+  height: 400px;
 }
 
+.ST h2 {
+  z-index: 500;
+  color: white;
+  font-size: 32px;
+  font-family: "Gunnar";
+}
+
+.TriangleTop {
+  position: absolute;
+
+  clip-path: polygon(97% 0, 0 0, 0 95%);
+}
+
+.TriangleTop img {
+  width: 100%;
+}
+
+.TriangleBottom {
+  position: absolute;
+
+  clip-path: polygon(100% 5%, 100% 100%, 3% 100%);
+}
+.TriangleBottom img {
+  width: 100%;
+}
 .Tortillas {
   width: 50%;
 }
