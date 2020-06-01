@@ -85,7 +85,7 @@ class Menu extends React.Component {
             </div>
           ))}
         </div>
-        <h4>Choice of Sides</h4>
+        <h4>Side Choices</h4>
         <div className="Sides">
           <div className="Side">
             <img src={rice} />
@@ -97,11 +97,11 @@ class Menu extends React.Component {
           </div>
           <div className="Side">
             <img src={potato} />
-            <h6>Potato</h6>
+            <h6>Potato Salad</h6>
           </div>
           <div className="Side">
             <img src={green} />
-            <h6>Green</h6>
+            <h6>Green Salad</h6>
           </div>
         </div>
         <div className="SalsaTortillas">
@@ -174,7 +174,7 @@ var lineItems = [
     ],
   },
   {
-    name: "Meal Paks",
+    name: "Family Meals",
     items: [
       {
         item: "Mini Pak",

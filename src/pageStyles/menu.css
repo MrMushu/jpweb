@@ -14,6 +14,7 @@
 .MenuCategories {
   display: flex;
   justify-content: space-evenly;
+  padding: 0 0 10px;
 }
 
 .MenuCategories h2 {
@@ -45,6 +46,8 @@
   flex-direction: column;
   align-items: center;
   padding: 5%;
+  border-top: 0.5px solid rgb(155, 132, 132);
+  border-bottom: 0.5px solid rgb(155, 132, 132);
 }
 
 .Items {
