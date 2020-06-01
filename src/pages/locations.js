@@ -134,6 +134,40 @@ class Locations extends React.Component {
           <p></p>
         </div>
         <div className="MapContainer">
+          {window.innerWidth < 650 ? (
+            <div style={{ height: "300px", overflow: "hidden" }}>
+              <Map
+                google={this.props.google}
+                zoom={13}
+                style={mapStylesSmall}
+                initialCenter={this.state.location}
+                center={this.state.location}
+              >
+                {stores.map((selectedStore, i) => (
+                  <Marker
+                    key={i}
+                    style={{ width: "50px", height: "50px" }}
+                    title={"The marker`s title will appear as a tooltip."}
+                    address={selectedStore.address}
+                    phone={selectedStore.phone}
+                    hours={selectedStore.hours}
+                    position={selectedStore.position}
+                    onClick={this.onMarkerClick}
+                  />
+                ))}
+                <InfoWindow
+                  marker={this.state.activeMarker}
+                  visible={this.state.showingInfoWindow}
+                >
+                  <div>
+                    <h2>{this.state.selectedPlace[0].address}</h2>
+                    <h2>Phone: {this.state.selectedPlace[0].phone}</h2>
+                    <a>Directions</a>
+                  </div>
+                </InfoWindow>
+              </Map>
+            </div>
+          ) : null}
           {!this.state.showNearby ? (
             <div className="StoreList">
               <div className="Search">
@@ -219,38 +253,40 @@ class Locations extends React.Component {
               )}
             </div>
           )}
-          <div style={{ height: "500px", overflow: "hidden" }}>
-            <Map
-              google={this.props.google}
-              zoom={13}
-              style={mapStyles}
-              initialCenter={this.state.location}
-              center={this.state.location}
-            >
-              {stores.map((selectedStore, i) => (
-                <Marker
-                  key={i}
-                  style={{ width: "50px", height: "50px" }}
-                  title={"The marker`s title will appear as a tooltip."}
-                  address={selectedStore.address}
-                  phone={selectedStore.phone}
-                  hours={selectedStore.hours}
-                  position={selectedStore.position}
-                  onClick={this.onMarkerClick}
-                />
-              ))}
-              <InfoWindow
-                marker={this.state.activeMarker}
-                visible={this.state.showingInfoWindow}
+          {window.innerWidth > 650 ? (
+            <div style={{ height: "500px", overflow: "hidden" }}>
+              <Map
+                google={this.props.google}
+                zoom={13}
+                style={mapStyles}
+                initialCenter={this.state.location}
+                center={this.state.location}
               >
-                <div>
-                  <h2>{this.state.selectedPlace[0].address}</h2>
-                  <h2>Phone: {this.state.selectedPlace[0].phone}</h2>
-                  <a>Directions</a>
-                </div>
-              </InfoWindow>
-            </Map>
-          </div>
+                {stores.map((selectedStore, i) => (
+                  <Marker
+                    key={i}
+                    style={{ width: "50px", height: "50px" }}
+                    title={"The marker`s title will appear as a tooltip."}
+                    address={selectedStore.address}
+                    phone={selectedStore.phone}
+                    hours={selectedStore.hours}
+                    position={selectedStore.position}
+                    onClick={this.onMarkerClick}
+                  />
+                ))}
+                <InfoWindow
+                  marker={this.state.activeMarker}
+                  visible={this.state.showingInfoWindow}
+                >
+                  <div>
+                    <h2>{this.state.selectedPlace[0].address}</h2>
+                    <h2>Phone: {this.state.selectedPlace[0].phone}</h2>
+                    <a>Directions</a>
+                  </div>
+                </InfoWindow>
+              </Map>
+            </div>
+          ) : null}
         </div>
       </div>
     );
@@ -260,7 +296,10 @@ class Locations extends React.Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk",
 })(Locations);
-
+const mapStylesSmall = {
+  width: "100%",
+  height: "300px",
+};
 const mapStyles = {
   width: "60%",
   height: "500px",

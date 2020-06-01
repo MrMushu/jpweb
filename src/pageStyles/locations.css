@@ -18,30 +18,30 @@
   padding: 10% 10%;
   font-size: 14px;
   font-weight: 200;
-  color: rgb(185, 185, 185)
+  color: rgb(185, 185, 185);
 }
 
 .SearchDirections img {
   width: 35%;
   max-width: 200px;
-  opacity: .4;
+  opacity: 0.4;
   padding-bottom: 5%;
 }
 
 .StoreInfo {
   text-align: left;
-  border-bottom: .5px solid grey;
-  padding: 5px 10%
+  border-bottom: 0.5px solid grey;
+  padding: 5px 10%;
 }
 
 .StoreInfo h4 {
   font-size: 16px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .StoreInfo h5 {
   font-size: 14px;
-  font-weight: 400
+  font-weight: 400;
 }
 
 .StoreLinks {
@@ -56,11 +56,11 @@
 }
 
 .Link:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .Link h5 {
-  font-weight: bold
+  font-weight: bold;
 }
 
 .Link img {
@@ -69,19 +69,19 @@
   padding: 6px;
   margin: 0 3%;
   border-radius: 32px;
-  background-color: rgb(255, 27, 27)
+  background-color: rgb(255, 27, 27);
 }
 
 .Search {
   height: 25px;
   border-width: 0;
   border-color: white;
-  align-items: center
+  align-items: center;
 }
 
 .Search input {
   text-align: center;
-  border-width: 0 0 1px 0
+  border-width: 0 0 1px 0;
 }
 
 .Search img {
@@ -98,4 +98,16 @@
 .Marker img {
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 650px) {
+  .MapContainer {
+    flex-direction: column;
+  }
+
+  .StoreList {
+    width: 100%;
+
+    z-index: 4;
+  }
 }
