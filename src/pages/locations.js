@@ -12,7 +12,7 @@ import navigate from "../icons/navigate.png";
 import phone from "../icons/phone.png";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 
-class Locations extends React.Component {
+class Locations extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -26,8 +26,17 @@ class Locations extends React.Component {
         lng: -117.312842,
       },
       showNearby: false,
+      zip: "",
     };
   }
+
+  checkParams = () => {
+    const queryString = require("query-string");
+    var parsed = queryString.parse(this.props.location.search);
+    if ("area" in parsed) {
+      this.searchLocation(this.state.zip);
+    }
+  };
 
   handleChange = (event) => {
     const target = event.target;
@@ -68,7 +77,7 @@ class Locations extends React.Component {
     var self = this;
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.zip}&key=AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${code}&key=AIzaSyAha7YujaLA7Xm_xO_tUzXj9Lb-yCWhcIk`
       )
       .then((res) => {
         var data = res.data;
@@ -77,7 +86,7 @@ class Locations extends React.Component {
         if (data.status === "OK") {
           var location = data.results[0].geometry.location;
           self.setState({ location: location });
-          this.findNearby(this.state.location);
+          this.findNearby(location);
         } else {
           alert("ZERO RESULTS FOUND");
         }
@@ -127,6 +136,7 @@ class Locations extends React.Component {
   }
 
   render() {
+    console.log("RENDERED");
     return (
       <div style={{ height: "100%" }}>
         <div>
@@ -140,7 +150,6 @@ class Locations extends React.Component {
                 google={this.props.google}
                 zoom={13}
                 style={mapStylesSmall}
-                initialCenter={this.state.location}
                 center={this.state.location}
               >
                 {stores.map((selectedStore, i) => (
@@ -178,9 +187,9 @@ class Locations extends React.Component {
                   value={this.state.zip}
                   onChange={this.handleChange}
                 />
-                <Link onClick={this.searchLocation}>
+                <div onClick={() => this.searchLocation(this.state.zip)}>
                   <img src={search} />
-                </Link>
+                </div>
               </div>
               <div className="SearchDirections">
                 <img src={emblem}></img>

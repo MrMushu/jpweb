@@ -18,14 +18,17 @@ import mini from "../images/mini.jpg";
 import brush from "../images/brush.png";
 import doctors from "../images/doctors.jpg";
 import accent from "../images/accent.png";
-
+import half_chicken from "../images/half_chicken.jpg";
 import News from "../components/news/news";
-
-class Home extends React.Component {
+import rice from "../images/rice.jpg";
+class Home extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      zip: "",
+    };
   }
+
   handleChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -39,9 +42,18 @@ class Home extends React.Component {
   redirect = (index) => {
     this.props.history.push(`/menu?selected=${index}`);
   };
+
+  findLocation = () => {
+    this.props.history.push({
+      pathname: `/locations`,
+
+      search: `?area=${this.state.zip}`,
+    });
+  };
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+
   render() {
     return (
       <div className="Hero">
@@ -51,13 +63,9 @@ class Home extends React.Component {
 
         <div className="OurFood">
           <div className="OurFoodHeader">
-            <img
-              style={{ transform: [{ rotateX: "180deg" }] }}
-              src={accent}
-            ></img>
+            <div className="Line" />
             <h1>OUR FOOD</h1>
-
-            <img src={accent}></img>
+            <div className="Line" />
           </div>
 
           <div className="OurFoodCategories">
@@ -65,33 +73,27 @@ class Home extends React.Component {
               className="DescriptionSection"
               onClick={() => this.redirect("0")}
             >
-              <img src={burrito}></img>
-              <h2>ENTREES</h2>
+              <img src={white}></img>
+              <h2>MEALS</h2>
             </div>
             <div
               className="DescriptionSection"
               onClick={() => this.redirect("1")}
             >
-              <img src={tacos}></img>
-              <h2>MEALS</h2>
+              <img src={mini}></img>
+              <h2>FAMILY MEALS</h2>
             </div>
             <div
               className="DescriptionSection"
               onClick={() => this.redirect("2")}
             >
-              <img src={white}></img>
-              <h2>FAMILY MEALS</h2>
+              <img src={tacos}></img>
+              <h2>Entrees</h2>
             </div>
+
             <div
               className="DescriptionSection"
               onClick={() => this.redirect("3")}
-            >
-              <img src={white}></img>
-              <h2>SIDES</h2>
-            </div>
-            <div
-              className="DescriptionSection"
-              onClick={() => this.redirect("4")}
             >
               <img src={white}></img>
               <h2>PARTY PAKS</h2>
@@ -128,9 +130,10 @@ class Home extends React.Component {
               type="text"
               name="zip"
               value={this.state.zip}
+              onChange={this.handleChange}
               placeholder="Zip Code *"
             />
-            <Link to="/locations">FIND STORE</Link>
+            <Link onClick={this.findLocation}>FIND STORE</Link>
           </div>
         </div>
         <Footer />

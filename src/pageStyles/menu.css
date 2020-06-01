@@ -1,118 +1,167 @@
 .Page {
-    height: 100%;
-    padding-top: 150px;
-    font-family: "Hand Crafted";
+  height: 100%;
+  padding-top: 150px;
+  font-family: "Hand Crafted";
 }
 
 .MenuHeader {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
 
 .MenuCategories {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .MenuCategories h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: rgb(87, 84, 78)
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(87, 84, 78);
 }
 
 .CategorySelected {
-    border-bottom: 3px solid rgb(184, 49, 49);
+  border-bottom: 3px solid rgb(184, 49, 49);
 }
 
 .CategorySelected h2 {
-    color: black
+  color: black;
 }
 
 .CategorySelected:hover {
-    cursor: pointer;
-    border-bottom: 3px solid rgb(184, 49, 49);
+  cursor: pointer;
+  border-bottom: 3px solid rgb(184, 49, 49);
 }
 
 .Category:hover {
-    cursor: pointer;
-    border-bottom: 2px solid rgb(230, 155, 155);
+  cursor: pointer;
+  border-bottom: 2px solid rgb(230, 155, 155);
 }
 
 .ItemsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
 }
 
 .Items {
-    display: flex;
-    justify-self: center;
-    justify-content: space-between;
-    align-self: center;
-    text-align: left;
-    font-family: "Gunnar";
-    letter-spacing: 4px;
-    align-items: center;
-    padding: 2.5% 0 2.5%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  align-self: center;
+  text-align: left;
+  font-family: "Gunnar";
+  letter-spacing: 4px;
+  align-items: center;
+  padding: 2.5% 0 2.5%;
 }
 
 .ItemImage {
-    display: flex;
-    width: 50%;
-    max-width: 1000px;
-    align-items: center;
-    padding-left: 10%
+  display: flex;
+  width: 50%;
+  max-width: 1000px;
+  align-items: center;
+  padding-left: 10%;
 }
 
 .ItemImage img {
-    width: 75%;
+  width: 75%;
 }
 
 .ItemDescription {
-    width: 50%
+  width: 50%;
 }
 
 .ItemDescription p {
-    font-size: 20px
+  font-size: 20px;
+}
+
+.Sides {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 5%;
+}
+
+.Side {
+  width: 18%;
+  color: rgb(65, 52, 51);
+}
+.Side img {
+  width: 100%;
+}
+
+.SalsaTortillas {
+  display: flex;
+}
+
+.Salsa {
+  width: 50%;
+}
+.ST {
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(65, 52, 51);
+}
+
+.Tortillas {
+  width: 50%;
+}
+.Links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 1150px) {
+  .MenuCategories h2 {
+    font-size: 16px;
+  }
+
+  .ItemDescription h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .ItemDescription p {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 650px) {
-    .Page p {
-        font-size: 15px;
-        color: rgb(92, 86, 86)
-    }
-    .MenuHeader h2 {
-        font-size: 24px
-    }
-    .MenuCategories h2 {
-        font-size: 12px;
-    }
-    .Items {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 5%
-    }
-    .ItemImage {
-        width: 80%
-    }
-    .ItemImage img {
-        width: 100%;
-    }
-    .ItemDescription {
-        padding: 5% 0 10%;
-        width: 100%;
-        text-align: center
-    }
-    .ItemDescription h3 {
-        font-size: 18px;
-        width: 100%
-    }
-    .ItemDescription p {
-        font-size: 12px;
-        width: 100%
-    }
+  .Page p {
+    font-size: 15px;
+    color: rgb(92, 86, 86);
+  }
+  .MenuHeader h2 {
+    font-size: 24px;
+  }
+  .MenuCategories h2 {
+    font-size: 12px;
+  }
+  .Items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+  }
+  .ItemImage {
+    width: 80%;
+  }
+  .ItemImage img {
+    width: 100%;
+  }
+  .ItemDescription {
+    padding: 5% 0 10%;
+    width: 100%;
+    text-align: center;
+  }
+  .ItemDescription h3 {
+    font-size: 18px;
+    width: 100%;
+  }
+  .ItemDescription p {
+    font-size: 12px;
+    width: 100%;
+  }
 }

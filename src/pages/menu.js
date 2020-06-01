@@ -32,6 +32,7 @@ class Menu extends React.Component {
       selectedCategory: category,
     });
   };
+
   componentDidMount() {
     window.scrollTo(0, 0);
     const queryString = require("query-string");
@@ -82,9 +83,53 @@ class Menu extends React.Component {
             </div>
           ))}
         </div>
-        <div>
-          <h2>Nutrition Facts</h2>
-          <h2>PDF Menu </h2>
+        <h4>Sides</h4>
+        <div className="Sides">
+          <div className="Side">
+            <img src={rice} />
+            <h6>Rice</h6>
+          </div>
+          <div className="Side">
+            <img src={beans} />
+            <h6>Beans</h6>
+          </div>
+          <div className="Side">
+            <img src={potato} />
+            <h6>Potato</h6>
+          </div>
+          <div className="Side">
+            <img src={green} />
+            <h6>Green</h6>
+          </div>
+        </div>
+        <div className="SalsaTortillas">
+          <div className="Salsa">
+            <h4>Salsa</h4>
+            <div className="ST">
+              <div>
+                <h6>Hot</h6>
+              </div>
+              <div>
+                <h6>Mild</h6>
+              </div>
+            </div>
+          </div>
+          <div className="Tortillas">
+            <h4>Tortillas</h4>
+            <div className="ST">
+              <div>
+                <h6>Flour</h6>
+              </div>
+              <div>
+                <h6>Corn</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="Links">
+          <h6>Nutrition Facts</h6>
+          <h6>PDF Menu </h6>
         </div>
       </div>
     );
@@ -180,26 +225,27 @@ var lineItems = [
       },
     ],
   },
-  {
-    name: "Sides",
-    items: [
-      {
-        item: "Rice",
-        img: rice,
-      },
-      {
-        item: "Beans",
-        img: beans,
-      },
-      {
-        item: "Potato Salad",
-        img: potato,
-      },
-      {
-        item: "Green Salad",
-        img: green,
-      },
-    ],
-  },
+
   { name: "Party Paks", items: [] },
 ];
+var sides = {
+  name: "Sides",
+  items: [
+    {
+      item: "Rice",
+      img: rice,
+    },
+    {
+      item: "Beans",
+      img: beans,
+    },
+    {
+      item: "Potato Salad",
+      img: potato,
+    },
+    {
+      item: "Green Salad",
+      img: green,
+    },
+  ],
+};
