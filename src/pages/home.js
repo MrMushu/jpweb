@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import "../../src/pageStyles/home.css";
 
 import Carousel from "../components/carousel/carousel";
@@ -29,6 +35,10 @@ class Home extends React.Component {
       [name]: value,
     });
   };
+
+  redirect = (index) => {
+    this.props.history.push(`/menu?selected=${index}`);
+  };
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -51,17 +61,40 @@ class Home extends React.Component {
           </div>
 
           <div className="OurFoodCategories">
-            <div className="DescriptionSection">
+            <div
+              className="DescriptionSection"
+              onClick={() => this.redirect("0")}
+            >
               <img src={burrito}></img>
               <h2>ENTREES</h2>
             </div>
-            <div className="DescriptionSection">
+            <div
+              className="DescriptionSection"
+              onClick={() => this.redirect("1")}
+            >
               <img src={tacos}></img>
               <h2>MEALS</h2>
             </div>
-            <div className="DescriptionSection">
+            <div
+              className="DescriptionSection"
+              onClick={() => this.redirect("2")}
+            >
+              <img src={white}></img>
+              <h2>FAMILY MEALS</h2>
+            </div>
+            <div
+              className="DescriptionSection"
+              onClick={() => this.redirect("3")}
+            >
               <img src={white}></img>
               <h2>SIDES</h2>
+            </div>
+            <div
+              className="DescriptionSection"
+              onClick={() => this.redirect("4")}
+            >
+              <img src={white}></img>
+              <h2>PARTY PAKS</h2>
             </div>
           </div>
 

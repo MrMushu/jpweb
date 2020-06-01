@@ -195,6 +195,9 @@ p {
   background-color: transparent;
 }
 
+.DescriptionSection:hover {
+  cursor: pointer;
+}
 .DescriptionSection h2 {
   font-family: "Hand Crafted";
   letter-spacing: 5px;

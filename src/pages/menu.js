@@ -34,7 +34,15 @@ class Menu extends React.Component {
   };
   componentDidMount() {
     window.scrollTo(0, 0);
+    const queryString = require("query-string");
+    var parsed = queryString.parse(this.props.location.search);
+    if ("selected" in parsed) {
+      this.setState({
+        selectedCategory: Number(parsed.selected),
+      });
+    }
   }
+
   render() {
     return (
       <div className="Page">
