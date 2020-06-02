@@ -120,7 +120,7 @@ class Menu extends React.Component {
             <h4>Tortillas</h4>
 
             <div className="ST">
-              <h2>Flour</h2>
+              <h2>Corn</h2>
 
               <div className="TriangleTop">
                 <img src={tortillas} />
@@ -129,7 +129,7 @@ class Menu extends React.Component {
               <div className="TriangleBottom">
                 <img src={tortillas} />
               </div>
-              <h2 style={{ paddingTop: "50%" }}>Corn</h2>
+              <h2 style={{ paddingTop: "50%" }}>Flour</h2>
             </div>
           </div>
         </div>
