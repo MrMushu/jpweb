@@ -19,6 +19,7 @@ import beans from "../images/beans.jpg";
 import potato from "../images/potato.jpg";
 import green from "../images/green.jpg";
 
+import salsa from '../images/salsa.jpg';
 import tortillas from "../images/tortillas.jpg";
 
 class Menu extends React.Component {
@@ -54,7 +55,7 @@ class Menu extends React.Component {
           <h2>Menu</h2>
           <div className="Line" />
         </div>
-        <p>Select a category</p>
+        <p></p>
         <div className="MenuCategories">
           {lineItems.map((category, i) => (
             <div
@@ -85,6 +86,7 @@ class Menu extends React.Component {
             </div>
           ))}
         </div>
+        
         <h4>Side Choices</h4>
         <div className="Sides">
           <div className="Side">
@@ -108,12 +110,11 @@ class Menu extends React.Component {
           <div className="Salsa">
             <h4>Salsa</h4>
             <div className="ST">
-              <div>
-                <h6>Hot</h6>
+              <div className='SalsaPic'>
+                <img src={salsa}/>
+                
               </div>
-              <div>
-                <h6>Mild</h6>
-              </div>
+             
             </div>
           </div>
           <div className="Tortillas">

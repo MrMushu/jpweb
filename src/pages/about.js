@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "../pageStyles/about.css";
 import spit from "../images/spit_cutout.png";
-import house from "../images/chicken_house.jpg";
+import house from "../images/historic.jpg";
 import cook from "../images/cook.png";
 import chicken from "../icons/chicken.png";
 import meal from "../images/meal.png";

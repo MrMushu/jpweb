@@ -117,6 +117,15 @@
   font-family: "Gunnar";
 }
 
+.SalsaPic {
+  width: 75%
+}
+
+.SalsaPic img{
+  width: 100%
+
+}
+
 .TriangleTop {
   position: absolute;
 

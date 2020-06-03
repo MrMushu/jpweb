@@ -1,6 +1,8 @@
 import React from "react";
 import "../carousel/Carousel.css";
 import grab from "../../images/Header.jpg";
+import hero from '../../images/hero.jpg';
+import catering from '../../images/catering_award.jpg'
 import hot from "../../images/hot_sauce.jpg";
 
 class Carousel extends React.PureComponent {
@@ -28,7 +30,13 @@ class Carousel extends React.PureComponent {
   render() {
     return (
       <div className="CarouselContainer">
-        <img src={hot}></img>
+        <img src={hero}></img>
+        <div className='Under'>
+          <div className="Circle"/>
+          <div className="Circle"/>
+          <div className="Circle"/>
+          <div className="Circle"/>
+        </div>
       </div>
     );
   }

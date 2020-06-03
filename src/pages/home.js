@@ -60,7 +60,7 @@ class Home extends React.PureComponent {
         <div className="HeroHeader">
           <Carousel />
         </div>
-
+        
         <div className="OurFood">
           <div className="OurFoodHeader">
             <div className="Line" />
