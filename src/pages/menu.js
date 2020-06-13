@@ -2,6 +2,8 @@ import React from "react";
 
 import "../pageStyles/menu.css";
 
+import people from "../icons/people.png";
+
 import quarter_white from "../images/quarter_white.png";
 import half_chicken from "../images/half_chicken.jpg";
 import quarter_dark from "../images/quarter_dark.jpg";
@@ -14,13 +16,16 @@ import burrito from "../images/burrito.jpg";
 import salad from "../images/salad.jpg";
 import bowl from "../images/bowl.jpg";
 
-import rice from "../images/rice.jpg";
-import beans from "../images/beans.jpg";
-import potato from "../images/potato.jpg";
-import green from "../images/green.jpg";
+import rice from "../images/rice.png";
+import beans from "../images/beans.png";
+import potato from "../images/potato.png";
+import green from "../images/green.png";
 
-import salsa from '../images/salsa.jpg';
+import salsa from "../images/salsa.jpg";
 import tortillas from "../images/tortillas.jpg";
+
+import hero from "../images/hero.jpg";
+import salad_hero from "../images/salad_hero.jpg";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -51,9 +56,9 @@ class Menu extends React.Component {
     return (
       <div className="Page">
         <div className="MenuHeader">
-          <div className="Line" />
           <h2>Menu</h2>
-          <div className="Line" />
+
+          <img src={salad_hero} />
         </div>
         <p></p>
         <div className="MenuCategories">
@@ -64,8 +69,13 @@ class Menu extends React.Component {
                   ? "CategorySelected"
                   : "Category"
               }
+              onClick={() => this.setCategory(i)}
             >
-              <h2 onClick={() => this.setCategory(i)}>{category.name}</h2>
+              <h2>{category.name}</h2>{" "}
+              <div className="Feeds">
+                <img src={people} />
+                <p> {category.feeds}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -86,51 +96,47 @@ class Menu extends React.Component {
             </div>
           ))}
         </div>
-        
-        <h4>Side Choices</h4>
-        <div className="Sides">
-          <div className="Side">
-            <img src={rice} />
-            <h6>Rice</h6>
-          </div>
-          <div className="Side">
-            <img src={beans} />
-            <h6>Beans</h6>
-          </div>
-          <div className="Side">
-            <img src={potato} />
-            <h6>Potato Salad</h6>
-          </div>
-          <div className="Side">
-            <img src={green} />
-            <h6>Green Salad</h6>
-          </div>
-        </div>
-        <div className="SalsaTortillas">
-          <div className="Salsa">
-            <h4>Salsa</h4>
-            <div className="ST">
-              <div className='SalsaPic'>
-                <img src={salsa}/>
-                
-              </div>
-             
+        <div className="SideChoices">
+          <h4>Side Choices</h4>
+          <div className="Sides">
+            <div className="Side">
+              <img src={rice} />
+              <h6>Rice</h6>
+            </div>
+            <div className="Side">
+              <img src={beans} />
+              <h6>Beans</h6>
+            </div>
+            <div className="Side">
+              <img src={potato} />
+              <h6>Potato Salad</h6>
+            </div>
+            <div className="Side">
+              <img src={green} />
+              <h6>Green Salad</h6>
             </div>
           </div>
-          <div className="Tortillas">
-            <h4>Tortillas</h4>
-
-            <div className="ST">
-              <h2>Corn</h2>
-
-              <div className="TriangleTop">
-                <img src={tortillas} />
+          <div className="SalsaTortillas">
+            <div className="Salsa">
+              <h4>Salsa</h4>
+              <div className="ST">
+                <div className="SalsaPic">
+                  <img src={salsa} />
+                </div>
               </div>
+            </div>
+            <div className="Tortillas">
+              <h4>Tortillas</h4>
 
-              <div className="TriangleBottom">
-                <img src={tortillas} />
+              <div className="ST">
+                <h2>Corn</h2>
+
+                <div className="SalsaPic">
+                  <img src={tortillas} />
+                </div>
+
+                <h2 style={{ paddingTop: "50%" }}>Flour</h2>
               </div>
-              <h2 style={{ paddingTop: "50%" }}>Flour</h2>
             </div>
           </div>
         </div>
@@ -173,6 +179,7 @@ var lineItems = [
         img: half_chicken,
       },
     ],
+    feeds: " 1-3",
   },
   {
     name: "Family Meals",
@@ -199,6 +206,7 @@ var lineItems = [
         img: jumbo,
       },
     ],
+    feeds: " 3-10 +",
   },
   {
     name: "Entrees",
@@ -232,9 +240,10 @@ var lineItems = [
         img: bowl,
       },
     ],
+    feeds: " 1-2",
   },
 
-  { name: "Party Paks", items: [] },
+  { name: "Party Paks", items: [], feeds: "20-60+" },
 ];
 var sides = {
   name: "Sides",
