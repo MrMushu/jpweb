@@ -1,0 +1,29 @@
+.Terms {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    align-items: center
+}
+
+.TermsContent{
+    width: 90%;
+    max-width: 900px
+}
+
+h1 {
+    font-size: 26px;
+    text-align: left;
+    padding: 3% 0;
+}
+
+h2 {
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold
+}
+
+p {
+    text-align: left;
+    font-size: 14px;
+    color: rgb(99, 86, 86)
+}

@@ -60,7 +60,7 @@ class Header extends React.Component {
             <Link to="/menu">Menu</Link>
             <Link to="/catering">Catering</Link>
             <Link to="/help">{this.state.width}</Link>
-            <Link to="/help">Contact</Link>
+            <Link to="/contact">Contact</Link>
             <Link to="/locations">
               <button>Locations</button>
             </Link>

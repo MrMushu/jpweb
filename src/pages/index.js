@@ -10,6 +10,9 @@ import Menu from "./menu";
 import About from "./about";
 import Catering from "./catering";
 import Locations from "./locations";
+import Contact from './contact'
+import Terms from './terms'
+import Privacy from './privacy'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -29,6 +32,9 @@ class IndexPage extends React.Component {
             <Route path="/about-us" component={About} />
             <Route path="/catering" component={Catering} />
             <Route path="/locations" component={Locations} />
+            <Route path="/contact" component={Contact}/>
+            <Route path="/terms" component={Terms}/>
+            <Route path="/privacy" component={Privacy}/>
             <Route path="/" component={Home} />
           </Switch>
           <Footer />
