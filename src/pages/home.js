@@ -25,6 +25,8 @@ import rice from "../images/rice.jpg";
 import faces from "../images/lifestyle_faces.jpg";
 import food from "../images/lifestyle_food.jpg";
 
+import dots from "../images/dots.png";
+import chickens from "../images/2chickens.png";
 import iphone from "../images/iphone.png";
 import catering_closeup from "../images/catering_closeup.jpg";
 class Home extends React.PureComponent {
@@ -95,7 +97,6 @@ class Home extends React.PureComponent {
 
           <Link to="/menu">VIEW MENU</Link>
         </div>
-
         <div className="Catering">
           <img src={catering_closeup} />
           <div className="CateringDescription">
@@ -107,7 +108,6 @@ class Home extends React.PureComponent {
             <Link to="/menu">VIEW CATERING</Link>
           </div>
         </div>
-
         <div className="Background">
           <p></p>
         </div>
@@ -145,27 +145,37 @@ class Home extends React.PureComponent {
             <Link onClick={this.findLocation}>FIND STORE</Link>
           </div>
         </div>
-
-        <div className="Redeem">
-          <div className="RedeemInfo">
-            <h2>Text & Redeem</h2>
-            <h2>For Your $17.49 Two CHicken Special!</h2>
-            <h3>No Sign Ups. No Surveys. No Hassle</h3>
-            <p>
-              Standard text messages and data charges apply. Receive up to 4
-              messages a month. To opt out, text "STOP" to 28748.
-            </p>
-          </div>
-
-          <div className="Iphone">
-            <img src={iphone} />
-            <h3>
-              Text POLLO <br />
-              to 28748
-            </h3>
-          </div>
+        <div className="Iphone">
+          <img src={iphone} />
+          <h3>
+            Text POLLO <br />
+            to 28748
+          </h3>
         </div>
-        <div className="Triangle" />
+        <div className="Chickens">
+          <img src={chickens} />
+        </div>
+
+        <div className="Text">
+          <div className="Redeem">
+            <div className="RedeemInfo">
+              <div className="RedeemFirstLine">
+                <h2>Text & Redeem</h2>
+                <h3>For Your</h3>
+              </div>
+              <div className="RedeemFirstLine">
+                <h3>$17.49 Two CHicken Special!</h3>
+              </div>
+            </div>
+          </div>
+
+          <h3>No Sign Ups. No Surveys. No Hassle</h3>
+          <h4>
+            Standard text messages and data charges apply. <br />
+            Receive up to 4 messages a month. To opt out, text "STOP" to 28748.
+          </h4>
+        </div>
+
         <div className="Eclub">
           <h1>JOIN THE ROAST</h1>
           <div className="EclubForm">
@@ -179,14 +189,12 @@ class Home extends React.PureComponent {
             <img src={brush}></img>
           </div>
         </div>
-
         <div className="WhatsHappening">
           <h1>WHAT'S HAPPENING</h1>
           <div className="WhatsHappeningNews">
             <News pic={doctors} />
           </div>
         </div>
-
         <Footer />
       </div>
     );
